@@ -16,7 +16,7 @@ try:
 
     setup(
         name='dbiu_databases',
-        version='0.1a0',  # modify this line to set a package version, one version for each DB
+        version='1',  # modify this line to set a package version, one version for each DB
         packages=find_packages(),
         install_requires=[
         ],
