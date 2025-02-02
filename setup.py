@@ -4,7 +4,7 @@ import os
 with open("README.md", "r") as fh:
     description = fh.read()
 try:
-    originalFile = './dbiu_databases/straftaten.db'  # modify this line to choose a database file
+    originalFile = './dbiu_databases/straftaten_einfach.db'  # modify this line to choose a database file
     dbFile = './dbiu_databases/base.db'
     bakFile = dbFile+'.bak'
 
@@ -16,7 +16,7 @@ try:
 
     setup(
         name='dbiu_databases',
-        version='7',  # modify this line to set a package version, one version for each DB
+        version='8',  # modify this line to set a package version, one version for each DB
         packages=find_packages(),
         install_requires=[
         ],
