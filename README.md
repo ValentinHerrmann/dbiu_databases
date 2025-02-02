@@ -31,4 +31,5 @@ and can be used in [sql_testing_tools](https://pypi.org/project/sql-testing-tool
 
 ### Database in this version: dbiu.bahn
 
-![dbiu.bahn](./dbiu_database/bahn.svg)
+![bahn](https://github.com/user-attachments/assets/611300ec-cf4d-489c-a70a-c5c56fcb1dfc)
+
