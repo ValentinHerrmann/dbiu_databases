@@ -30,6 +30,7 @@ If used in other contexts, the database files can be accessed with `importlib.re
 16. `dbiu.videospiele_einfach`: https://www.dbiu.de/videospiele
 17. `dbiu.videospiele`: https://www.dbiu.de/videospiele2
 18. `dbiu.wetterdaten`: https://www.dbiu.de/wetterdaten
+19. `dbiu.terra`: https://terra.sachsen.schule/ (not by dbiu; base on `Dürr, M., Radermacher, K.: "Einsatz von Datenbanksystemen - Ein Leitfaden für die Praxis". Berlin u.a.: Springer-Verlag 1990.`)
 
 
 #### Database in version: 1 - dbiu.bahn
@@ -85,3 +86,6 @@ If used in other contexts, the database files can be accessed with `importlib.re
 
 #### Database in version: 18 - dbiu.wetterdaten
  <img src="./dbiu_databases/wetterdaten.png" alt="drawing" style="max-height: 250px; width: auto;"/>
+
+#### Database in version: 19 - dbiu.terra
+![your-UML-diagram-name](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/refs/tags/19-Terra/dbiu_databases/terra.puml)

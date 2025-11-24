@@ -1,0 +1,204 @@
+@startuml terra
+
+skinparam classAttributeIconSize 0
+hide circle
+skinparam linetype ortho
+
+class aufgaben {
+  int id
+  String aufgabe
+  String loesung
+  int schwierigkeit
+  String hinweis
+}
+
+class BERG {
+  String B_NAME
+  String GEBIRGE
+  double HOEHE
+  int JAHR
+  double LAENGE
+  double BREITE
+}
+
+class EBENE {
+  String E_NAME
+  double HOEHE
+  double FLAECHE
+}
+
+class FLUSS {
+  String F_NAME
+  String FLUSS
+  String SEE
+  String MEER
+  int LAENGE
+  double LAENGEU
+  double BREITEU
+  double LAENGEM
+  double BREITEM
+}
+
+class GEO_BERG {
+  int id
+  String L_ID
+  String LT_ID
+  String B_NAME
+}
+
+class GEO_EBENE {
+  String LT_ID
+  String L_ID
+  String E_NAME
+}
+
+class GEO_FLUSS {
+  int id
+  String L_ID
+  String LT_ID
+  String F_NAME
+}
+
+class GEO_INSEL {
+  String LT_ID
+  String L_ID
+  String I_NAME
+}
+
+class GEO_MEER {
+  int id
+  String LT_ID
+  String L_ID
+  String M_NAME
+}
+
+class GEO_SEE {
+  int id
+  String LT_ID
+  String L_ID
+  String S_NAME
+}
+
+class GEO_WUESTE {
+  String LT_ID
+  String L_ID
+  String W_NAME
+}
+
+class INSEL {
+  String I_NAME
+  String INSELGRUPPE
+  double FLAECHE
+  double LAENGE
+  double BREITE
+}
+
+class KONTINENT {
+  String K_NAME
+  double FLAECHE
+}
+
+class LAND {
+  String L_ID
+  String L_NAME
+  double EINWOHNER
+  double FLAECHE
+  String HAUPTSTADT
+  String LT_ID
+}
+
+class LANDTEIL {
+  int id
+  String LT_ID
+  String L_ID
+  String LT_NAME
+  double EINWOHNER
+  String LAGE
+  String HAUPTSTADT
+}
+
+class LIEGT_AN {
+  int id
+  String ST_NAME
+  String LT_ID
+  String L_ID
+  String F_NAME
+  String S_NAME
+  String M_NAME
+}
+
+class MEER {
+  String M_NAME
+  double TIEFE
+}
+
+class ORGANISATION {
+  int id
+  String O_NAME
+  String ABKUERZUNG
+}
+
+class SEE {
+  String S_NAME
+  double TIEFE
+  double FLAECHE
+}
+
+class STADT {
+  String ST_NAME
+  String L_ID
+  String LT_ID
+  int EINWOHNER
+  double BREITE
+  double LAENGE
+}
+
+class WUESTE {
+  int id
+  String W_NAME
+  double FLAECHE
+  String WUESTENART
+}
+
+class HAT_SITZ_IN {
+  String ST_NAME
+  String LT_ID
+  String L_ID
+  String ABKUERZUNG
+}
+
+' Unidirectional foreign key associations
+FLUSS --> MEER : MEER
+FLUSS --> SEE : SEE
+GEO_BERG --> BERG : B_NAME
+GEO_BERG --> LAND : L_ID
+GEO_EBENE --> EBENE : E_NAME
+GEO_EBENE --> LAND : L_ID
+GEO_FLUSS --> FLUSS : F_NAME
+GEO_FLUSS --> LAND : L_ID
+GEO_INSEL --> INSEL : I_NAME
+GEO_INSEL --> LAND : L_ID
+GEO_MEER --> MEER : M_NAME
+GEO_MEER --> LAND : L_ID
+GEO_SEE --> LAND : L_ID
+GEO_WUESTE --> WUESTE : W_NAME
+GEO_WUESTE --> LAND : L_ID
+HAT_SITZ_IN --> ORGANISATION : ABKUERZUNG
+HAT_SITZ_IN --> LAND : L_ID
+HAT_SITZ_IN --> STADT : ST_NAME
+LANDTEIL --> LAND : L_ID
+LIEGT_AN --> MEER : M_NAME
+LIEGT_AN --> SEE : S_NAME
+LIEGT_AN --> FLUSS : F_NAME
+LIEGT_AN --> LAND : L_ID
+LIEGT_AN --> STADT : ST_NAME
+STADT --> LAND : L_ID
+
+' M:N bidirectional associations
+MEER "n" -- "m" MEER : GEHT_UEBER_IN
+LAND "n" -- "m" LAND : IST_BENACHBART_ZU
+LAND "n" -- "m" ORGANISATION : IST_MITGLIED_VON
+LAND "n" -- "m" KONTINENT : UMFASST
+
+@enduml
+
