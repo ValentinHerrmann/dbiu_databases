@@ -27,7 +27,7 @@ SQLite databases for teaching SQL. Databases 1–18 are based on [datenbanken-im
 | 17 | `dbiu.videospiele` | 7 | 175895 | m:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over junction tables (m:n) |
 | 18 | `dbiu.wetterdaten` | 1 | 310192 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
 | 19 | `dbiu.terra` | 26 | 5025 | 1:n, m:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n); self-join |
-| planned | `dbiu.chinook` | 11 | 15607 | 1:n, m:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n); self-join |
+| 20 | `dbiu.chinook` | 11 | 15607 | 1:n, m:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n); self-join |
 | planned | `dbiu.bike` | 10 | 142 | 1:1, 1:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n/1:1; self-join |
 | planned | `dbiu.schule` | 8 | 25914 | 1:n, m:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n) |
 | planned | `dbiu.pokemon` | 14 | 251134 | 1:1, 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n/1:1 |
@@ -43,7 +43,7 @@ SQLite databases for teaching SQL. Databases 1–18 are based on [datenbanken-im
 ### Available SQLite Databases
 
 The following SQLite databases are available in the respective version of [this package](https://pypi.org/project/dbiu_databases).
-and can be used in [sql_testing_tools](https://pypi.org/project/sql-testing-tools/) by calling Ba.setBaseName with `"dbiu.basename"` or number (`1` to `19`).
+and can be used in [sql_testing_tools](https://pypi.org/project/sql-testing-tools/) by calling Ba.setBaseName with `"dbiu.basename"` or number (`1` to `20`).
 
 Each database section below shows the UML class diagram (PNG/PDF download, landscape and portrait) and one-line table schemes following the course conventions (primary keys underlined, foreign keys under-dotted; also as PNG).
 
@@ -73,14 +73,15 @@ If used in other contexts, the database files can be accessed with `importlib.re
 17. `dbiu.videospiele`: https://www.dbiu.de/videospiele2
 18. `dbiu.wetterdaten`: https://www.dbiu.de/wetterdaten
 19. `dbiu.terra`: https://terra.sachsen.schule/ (not by dbiu; base on `Dürr, M., Radermacher, K.: "Einsatz von Datenbanksystemen - Ein Leitfaden für die Praxis". Berlin u.a.: Springer-Verlag 1990.`)
+20. `dbiu.chinook`: https://github.com/lerocha/chinook-database (Luis Rocha, v1.4.5)
 
 #### Database in version: 1 - dbiu.bahn
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn.png" alt="UML bahn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn.png" alt="UML bahn" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn.schema.png)
 
 ```text
 Bahnhof(int b̲a̲h̲n̲h̲o̲f̲_̲n̲r̲, String bundesland, String name, String abkuerzung, int kategorie, String strasse, String plz, String ort, String aufgabentraeger)
@@ -93,15 +94,15 @@ Tunnel(int i̲d̲, int strecke_nr, int richtung, int von_km_i, int bis_km_i, Str
 
 #### Database in version: 2 - dbiu.bayern
 
-**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_mn_portrait.pdf)
+**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_mn_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_mn.png" alt="UML bayern_mn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_mn.png" alt="UML bayern_mn" style="max-width: 100%;"/>
 
-**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_1n-1n.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_1n-1n_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_1n-1n_portrait.pdf)
+**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_1n-1n.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_1n-1n_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_1n-1n_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_1n-1n.png" alt="UML bayern_1n-1n" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_1n-1n.png" alt="UML bayern_1n-1n" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern.schema.png)
 
 ```text
 Freizeitpark(int i̲d̲, String name, String g̣ẹṃẹịṇḍẹṣc̣ḥḷụẹṣṣẹḷ, String strasse, String url, float breitengrad, float laengengrad)
@@ -118,11 +119,11 @@ Zoo(int i̲d̲, String name, String g̣ẹṃẹịṇḍẹṣc̣ḥḷụẹs�
 
 #### Database in version: 3 - dbiu.bundestag
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag.png" alt="UML bundestag" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag.png" alt="UML bundestag" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag.schema.png)
 
 ```text
 Mandat(int m̲̣d̲̣b̲̣_̲̣i̲̣d̲̣, int w̲̣a̲̣h̲̣l̲̣p̲̣e̲̣r̲̣i̲̣o̲̣d̲̣e̲̣_̲̣i̲̣d̲̣, String liste)
@@ -133,11 +134,11 @@ Wahlperiode(int i̲d̲, Date von, Date bis)
 
 #### Database in version: 4 - dbiu.bundestag_einfach
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag_einfach.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag_einfach.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag_einfach.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag_einfach.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag_einfach.png" alt="UML bundestag_einfach" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag_einfach.png" alt="UML bundestag_einfach" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag_einfach.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag_einfach.schema.png)
 
 ```text
 Bundestag(int i̲d̲, String vorname, String nachname, String geschlecht, Date geburtsdatum, String beruf, String partei, String liste)
@@ -146,11 +147,11 @@ Bundestag(int i̲d̲, String vorname, String nachname, String geschlecht, Date g
 
 #### Database in version: 5 - dbiu.film_fernsehen
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen.png" alt="UML film_fernsehen" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen.png" alt="UML film_fernsehen" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen.schema.png)
 
 ```text
 Film(String i̲d̲, String titel, int jahr, int laufzeit, String regisseur, String genre1, String genre2, int fsk)
@@ -160,11 +161,11 @@ Serie(String i̲d̲, String titel, String originalsprache, String sender, int st
 
 #### Database in version: 6 - dbiu.haushaltsausstattung
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/haushaltsausstattung.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/haushaltsausstattung.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/haushaltsausstattung.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/haushaltsausstattung.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/haushaltsausstattung.png" alt="UML haushaltsausstattung" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/haushaltsausstattung.png" alt="UML haushaltsausstattung" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/haushaltsausstattung.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/haushaltsausstattung.schema.png)
 
 ```text
 Haushaltsausstattung(String a̲u̲s̲s̲t̲a̲t̲t̲u̲n̲g̲, int j̲a̲h̲r̲, float prozent)
@@ -173,11 +174,11 @@ Haushaltsausstattung(String a̲u̲s̲s̲t̲a̲t̲t̲u̲n̲g̲, int j̲a̲h̲r̲,
 
 #### Database in version: 7 - dbiu.straftaten
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten.png" alt="UML straftaten" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten.png" alt="UML straftaten" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten.schema.png)
 
 ```text
 Straftat(String s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, String typ, String oberkategorie, String unterkategorie, String bezeichnung)
@@ -190,11 +191,11 @@ Tatverdaechtige(int i̲d̲, String ṣṭṛạf̣ṭạṭ_̣ṣc̣ḥḷụẹ
 
 #### Database in version: 8 - dbiu.straftaten_einfach
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_einfach.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_einfach.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_einfach.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_einfach.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_einfach.png" alt="UML straftaten_einfach" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_einfach.png" alt="UML straftaten_einfach" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_einfach.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_einfach.schema.png)
 
 ```text
 Straftaten(String s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, String typ, String oberkategorie, String unterkategorie, String bezeichnung, int anzahl, int versuche, int tatort_klein, int tatort_gross, int mit_schusswaffeneinsatz, int aufgeklaert, int tatverdaechtige_m, int tatverdaechtige_w, int davon_nichtdeutsche)
@@ -203,15 +204,15 @@ Straftaten(String s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, String typ, String oberkategor
 
 #### Database in version: 9 - dbiu.kunstsammlung
 
-**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_mn_portrait.pdf)
+**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_mn_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_mn.png" alt="UML kunstsammlung_mn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_mn.png" alt="UML kunstsammlung_mn" style="max-width: 100%;"/>
 
-**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_1n-1n.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_1n-1n_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_1n-1n_portrait.pdf)
+**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_1n-1n.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_1n-1n_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_1n-1n_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_1n-1n.png" alt="UML kunstsammlung_1n-1n" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_1n-1n.png" alt="UML kunstsammlung_1n-1n" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung.schema.png)
 
 ```text
 Ausstellung(int i̲d̲, String stadt, String ausstellungsort, String titel, Date von, Date bis)
@@ -224,11 +225,11 @@ Kunstwerk_zu_Kuenstler(int k̲̣u̲̣n̲̣s̲̣t̲̣w̲̣e̲̣r̲̣k̲̣_̲̣i̲
 
 #### Database in version: 10 - dbiu.ladepunkte
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte.png" alt="UML ladepunkte" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte.png" alt="UML ladepunkte" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte.schema.png)
 
 ```text
 Ladesaeule(int i̲d̲, int ṣṭạṭịọṇ_̣ịḍ, String art, Date inbetriebnahme, float breitengrad, float laengengrad)
@@ -239,11 +240,11 @@ Ladesteckdose(int i̲d̲, int ṣạẹụḷẹ_̣ịḍ, String typ, float lei
 
 #### Database in version: 11 - dbiu.laenderspiele
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/laenderspiele.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/laenderspiele.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/laenderspiele.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/laenderspiele.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/laenderspiele.png" alt="UML laenderspiele" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/laenderspiele.png" alt="UML laenderspiele" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/laenderspiele.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/laenderspiele.schema.png)
 
 ```text
 Laenderspiele(int i̲d̲, Date datum, String heim_team, String gast_team, int heim_tore, int gast_tore, String turnier, String stadt, String land)
@@ -252,11 +253,11 @@ Laenderspiele(int i̲d̲, Date datum, String heim_team, String gast_team, int he
 
 #### Database in version: 12 - dbiu.lebensmittel
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/lebensmittel.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/lebensmittel.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/lebensmittel.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/lebensmittel.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/lebensmittel.png" alt="UML lebensmittel" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/lebensmittel.png" alt="UML lebensmittel" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/lebensmittel.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/lebensmittel.schema.png)
 
 ```text
 Naehrwert(int i̲d̲, String name, String kategorie, int kilokalorien, float proteine, float wasser, float kohlenhydrate, float zucker, float ballaststoffe, float fette)
@@ -265,11 +266,11 @@ Naehrwert(int i̲d̲, String name, String kategorie, int kilokalorien, float pro
 
 #### Database in version: 13 - dbiu.schulstatistik
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schulstatistik.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schulstatistik.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schulstatistik.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schulstatistik.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schulstatistik.png" alt="UML schulstatistik" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schulstatistik.png" alt="UML schulstatistik" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schulstatistik.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schulstatistik.schema.png)
 
 ```text
 Schulstatistik(String g̲e̲m̲e̲i̲n̲d̲e̲s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, int s̲c̲h̲u̲l̲j̲a̲h̲r̲_̲s̲t̲a̲r̲t̲, String s̲c̲h̲u̲l̲a̲r̲t̲, String gemeindename, int schulen, int lehrkraefte, int klassen, int schueler, int unterrichtswochenstunden)
@@ -278,11 +279,11 @@ Schulstatistik(String g̲e̲m̲e̲i̲n̲d̲e̲s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, in
 
 #### Database in version: 14 - dbiu.studierende
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende.png" alt="UML studierende" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende.png" alt="UML studierende" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende.schema.png)
 
 ```text
 Studiengang(String s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, String beschreibung)
@@ -292,11 +293,11 @@ Studierende(String s̲̣t̲̣u̲̣d̲̣i̲̣e̲̣n̲̣g̲̣a̲̣n̲̣g̲̣_̲̣s
 
 #### Database in version: 15 - dbiu.unfallstatistik
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/unfallstatistik.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/unfallstatistik.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/unfallstatistik.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/unfallstatistik.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/unfallstatistik.png" alt="UML unfallstatistik" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/unfallstatistik.png" alt="UML unfallstatistik" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/unfallstatistik.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/unfallstatistik.schema.png)
 
 ```text
 Unfaelle(String v̲e̲r̲k̲e̲h̲r̲s̲b̲e̲t̲e̲i̲l̲i̲g̲u̲n̲g̲, String f̲e̲h̲l̲v̲e̲r̲h̲a̲l̲t̲e̲n̲, int j̲a̲h̲r̲, int anzahl)
@@ -305,11 +306,11 @@ Unfaelle(String v̲e̲r̲k̲e̲h̲r̲s̲b̲e̲t̲e̲i̲l̲i̲g̲u̲n̲g̲, Strin
 
 #### Database in version: 16 - dbiu.videospiele_einfach
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_einfach.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_einfach.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_einfach.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_einfach.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_einfach.png" alt="UML videospiele_einfach" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_einfach.png" alt="UML videospiele_einfach" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_einfach.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_einfach.schema.png)
 
 ```text
 Videospiel(String i̲d̲, String titel, Date veroeffentlichung, String land, int usk)
@@ -318,15 +319,15 @@ Videospiel(String i̲d̲, String titel, Date veroeffentlichung, String land, int
 
 #### Database in version: 17 - dbiu.videospiele
 
-**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_mn.pdf)
+**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_mn.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_mn.png" alt="UML videospiele_mn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_mn.png" alt="UML videospiele_mn" style="max-width: 100%;"/>
 
-**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_1n-1n.pdf)
+**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_1n-1n.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_1n-1n.png" alt="UML videospiele_1n-1n" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_1n-1n.png" alt="UML videospiele_1n-1n" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele.schema.png)
 
 ```text
 Format(String i̲d̲, String beschreibung)
@@ -341,11 +342,11 @@ Videospiel_zu_Format(String s̲̣p̲̣i̲̣e̲̣l̲̣_̲̣i̲̣d̲̣, String f̲
 
 #### Database in version: 18 - dbiu.wetterdaten
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/wetterdaten.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/wetterdaten.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/wetterdaten.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/wetterdaten.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/wetterdaten.png" alt="UML wetterdaten" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/wetterdaten.png" alt="UML wetterdaten" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/wetterdaten.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/wetterdaten.schema.png)
 
 ```text
 Wettermessung(Date d̲a̲t̲u̲m̲, String s̲t̲a̲n̲d̲o̲r̲t̲, float sonnenscheindauer, float niederschlagshoehe, float luftdruck, float windstaerke, float breitengrad, float laengengrad)
@@ -354,15 +355,15 @@ Wettermessung(Date d̲a̲t̲u̲m̲, String s̲t̲a̲n̲d̲o̲r̲t̲, float sonne
 
 #### Database in version: 19 - dbiu.terra
 
-**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_mn_portrait.pdf)
+**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_mn_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_mn.png" alt="UML terra_mn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_mn.png" alt="UML terra_mn" style="max-width: 100%;"/>
 
-**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_1n-1n.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_1n-1n_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_1n-1n_portrait.pdf)
+**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_1n-1n.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_1n-1n_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_1n-1n_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_1n-1n.png" alt="UML terra_1n-1n" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_1n-1n.png" alt="UML terra_1n-1n" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra.schema.png)
 
 ```text
 aufgaben(int i̲d̲, String aufgabe, String loesung, int schwierigkeit, String hinweis)
@@ -394,33 +395,17 @@ WUESTE(int i̲d̲, String W_NAME, float FLAECHE, String WUESTENART)
 ```
 
 
-### Planned databases (not yet released)
+#### Database in version: 20 - dbiu.chinook
 
-The following databases are prepared but not yet published as package versions; keys and version numbers are provisional.
+**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook_mn_portrait.pdf)
 
-- `dbiu.chinook`: https://github.com/lerocha/chinook-database (Luis Rocha, v1.4.5)
-- `dbiu.bike`: https://bike.oth-regensburg.de/downloadbereich-fuer-die-6-auflage.html (Edwin Schicker, "Datenbanken und SQL"; MySQL script `bikemysql-01.sql` from that page, converted to SQLite)
-- `dbiu.schule`: https://www.learn-sql.de/doku.php?id=sqlide:datenbanken:schudatenbank:start (Martin Pabst; SQLite download on that page, rebuilt without non-standard `isDate()` checks)
-- `dbiu.pokemon`: https://github.com/brianr852/Pokemon-Database (dump `Dump20160519-1.sql`, found via https://www.learn-sql.de/doku.php?id=sqlide:datenbanken:start; converted to SQLite, views dropped)
-- `dbiu.netflix`: https://github.com/lerocha/netflixdb (Luis Rocha; Spring Batch tables and empty `episode` table removed)
-- `dbiu.geodaten`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Geodaten25)
-- `dbiu.olympia`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
-- `dbiu.passwoerter`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Passwoerter1 + Passwoerter2 as two tables)
-- `dbiu.artikel`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
-- `dbiu.bundesland`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
-- `dbiu.sportverein`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook_mn.png" alt="UML chinook_mn" style="max-width: 100%;"/>
 
-#### Planned - dbiu.chinook
+**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook_1n-1n.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook_1n-1n_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook_1n-1n_portrait.pdf)
 
-**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook_mn_portrait.pdf)
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook_1n-1n.png" alt="UML chinook_1n-1n" style="max-width: 100%;"/>
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook_mn.png" alt="UML chinook_mn" style="max-width: 100%;"/>
-
-**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook_1n-1n.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook_1n-1n_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook_1n-1n_portrait.pdf)
-
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook_1n-1n.png" alt="UML chinook_1n-1n" style="max-width: 100%;"/>
-
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/chinook.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/chinook.schema.png)
 
 ```text
 Album(int A̲l̲b̲u̲m̲I̲d̲, String Title, int ẠṛṭịṣṭỊḍ)
@@ -437,13 +422,28 @@ Track(int T̲r̲a̲c̲k̲I̲d̲, String Name, int ẠḷḅụṃỊḍ, int Ṃ
 ```
 
 
+### Planned databases (not yet released)
+
+The following databases are prepared but not yet published as package versions; keys and version numbers are provisional.
+
+- `dbiu.bike`: https://bike.oth-regensburg.de/downloadbereich-fuer-die-6-auflage.html (Edwin Schicker, "Datenbanken und SQL"; MySQL script `bikemysql-01.sql` from that page, converted to SQLite)
+- `dbiu.schule`: https://www.learn-sql.de/doku.php?id=sqlide:datenbanken:schudatenbank:start (Martin Pabst; SQLite download on that page, rebuilt without non-standard `isDate()` checks)
+- `dbiu.pokemon`: https://github.com/brianr852/Pokemon-Database (dump `Dump20160519-1.sql`, found via https://www.learn-sql.de/doku.php?id=sqlide:datenbanken:start; converted to SQLite, views dropped)
+- `dbiu.netflix`: https://github.com/lerocha/netflixdb (Luis Rocha; Spring Batch tables and empty `episode` table removed)
+- `dbiu.geodaten`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Geodaten25)
+- `dbiu.olympia`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+- `dbiu.passwoerter`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Passwoerter1 + Passwoerter2 as two tables)
+- `dbiu.artikel`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+- `dbiu.bundesland`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+- `dbiu.sportverein`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+
 #### Planned - dbiu.bike
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bike.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bike.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bike_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bike_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bike.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bike.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bike_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bike_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bike.png" alt="UML bike" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bike.png" alt="UML bike" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bike.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bike.schema.png)
 
 ```text
 Lieferant(int N̲r̲, String Name, String Strasse, int PLZ, String Ort, String Sperre)
@@ -461,15 +461,15 @@ Reservierung(int P̲̣o̲̣s̲̣n̲̣r̲̣, int A̲̣r̲̣t̲̣n̲̣r̲̣, int A
 
 #### Planned - dbiu.schule
 
-**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule_mn_portrait.pdf)
+**UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_mn_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule_mn.png" alt="UML schule_mn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_mn.png" alt="UML schule_mn" style="max-width: 100%;"/>
 
-**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule_1n-1n.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule_1n-1n_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule_1n-1n_portrait.pdf)
+**UML (m:n mit Beziehungstabelle):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_1n-1n.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_1n-1n.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_1n-1n_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_1n-1n_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule_1n-1n.png" alt="UML schule_1n-1n" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_1n-1n.png" alt="UML schule_1n-1n" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schule.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule.schema.png)
 
 ```text
 fach(int i̲d̲, String name, String kuerzel, boolean ist_kernfach, boolean ist_vorrueckungsfach)
@@ -485,11 +485,11 @@ unterrichtet(int l̲̣e̲̣h̲̣r̲̣k̲̣r̲̣a̲̣f̲̣t̲̣_̲̣i̲̣d̲̣, i
 
 #### Planned - dbiu.pokemon
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/pokemon.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/pokemon.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/pokemon_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/pokemon_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/pokemon.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/pokemon.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/pokemon_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/pokemon_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/pokemon.png" alt="UML pokemon" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/pokemon.png" alt="UML pokemon" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/pokemon.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/pokemon.schema.png)
 
 ```text
 abilities(int a̲b̲i̲l̲_̲i̲d̲, String abil_name)
@@ -511,11 +511,11 @@ version_groups(int v̲e̲r̲s̲i̲o̲n̲_̲i̲d̲, String version_name, int orde
 
 #### Planned - dbiu.netflix
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/netflix.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/netflix.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/netflix_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/netflix_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/netflix.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/netflix.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/netflix_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/netflix_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/netflix.png" alt="UML netflix" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/netflix.png" alt="UML netflix" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/netflix.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/netflix.schema.png)
 
 ```text
 movie(int i̲d̲, boolean available_globally, Date release_date, Date created_date, Date modified_date, int runtime, String locale, String original_title, String title)
@@ -527,11 +527,11 @@ view_summary(int i̲d̲, int cumulative_weeks_in_top10, Date end_date, int hours
 
 #### Planned - dbiu.geodaten
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/geodaten.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/geodaten.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/geodaten_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/geodaten_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/geodaten.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/geodaten.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/geodaten_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/geodaten_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/geodaten.png" alt="UML geodaten" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/geodaten.png" alt="UML geodaten" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/geodaten.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/geodaten.schema.png)
 
 ```text
 Land(String l̲a̲e̲n̲d̲e̲r̲k̲u̲e̲r̲z̲e̲l̲, String name, float einwohner, int flaeche, String hauptstadt, String kontinent, int kontinentFlaeche, int kontinentEinwohner)
@@ -541,11 +541,11 @@ Ort(String n̲a̲m̲e̲, float l̲a̲e̲n̲g̲e̲, float b̲r̲e̲i̲t̲e̲, Str
 
 #### Planned - dbiu.olympia
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/olympia.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/olympia.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/olympia.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/olympia.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/olympia.png" alt="UML olympia" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/olympia.png" alt="UML olympia" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/olympia.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/olympia.schema.png)
 
 ```text
 Olympia(int j̲a̲h̲r̲, String s̲p̲o̲r̲t̲a̲r̲t̲, String d̲i̲s̲z̲i̲p̲l̲i̲n̲, String n̲a̲c̲h̲n̲a̲m̲e̲, String v̲o̲r̲n̲a̲m̲e̲, String geschlecht, String platzierung, String herkunftsland, String austragungsort)
@@ -554,11 +554,11 @@ Olympia(int j̲a̲h̲r̲, String s̲p̲o̲r̲t̲a̲r̲t̲, String d̲i̲s̲z̲i�
 
 #### Planned - dbiu.passwoerter
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/passwoerter.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/passwoerter.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/passwoerter_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/passwoerter_portrait.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/passwoerter.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/passwoerter.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/passwoerter_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/passwoerter_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/passwoerter.png" alt="UML passwoerter" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/passwoerter.png" alt="UML passwoerter" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/passwoerter.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/passwoerter.schema.png)
 
 ```text
 Passwort(String benutzername, String passwort, String ipAdresse, Date zuletztOnline)
@@ -568,11 +568,11 @@ Passwort_gehasht(String benutzername, String passwort, String ipAdresse, Date zu
 
 #### Planned - dbiu.artikel
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/artikel.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/artikel.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/artikel.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/artikel.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/artikel.png" alt="UML artikel" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/artikel.png" alt="UML artikel" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/artikel.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/artikel.schema.png)
 
 ```text
 Artikel(String art, String typ, String geschlecht, String farbe, float preis)
@@ -581,11 +581,11 @@ Artikel(String art, String typ, String geschlecht, String farbe, float preis)
 
 #### Planned - dbiu.bundesland
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundesland.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundesland.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundesland.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundesland.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundesland.png" alt="UML bundesland" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundesland.png" alt="UML bundesland" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundesland.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundesland.schema.png)
 
 ```text
 Bundesland(String k̲u̲e̲r̲z̲e̲l̲, String name, String hauptstadt, String regierungschef, int bundesratsstimmen, int flaeche, float einwohnerzahl, String wappen)
@@ -594,11 +594,11 @@ Bundesland(String k̲u̲e̲r̲z̲e̲l̲, String name, String hauptstadt, String 
 
 #### Planned - dbiu.sportverein
 
-**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/sportverein.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/sportverein.pdf)
+**UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/sportverein.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/sportverein.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/sportverein.png" alt="UML sportverein" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/sportverein.png" alt="UML sportverein" style="max-width: 100%;"/>
 
-**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/sportverein.schema.png)
+**Tabellenschema:** [![Tabellenschema PNG](https://img.shields.io/badge/Tabellenschema-PNG-green)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/sportverein.schema.png)
 
 ```text
 Sportverein(String v̲o̲r̲n̲a̲m̲e̲, String n̲a̲c̲h̲n̲a̲m̲e̲, Date g̲e̲b̲D̲a̲t̲, String sportart, int vereinsbeitritt)
