@@ -1,0 +1,58 @@
+%%{init: {"fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif", "theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction LR
+  class fach {
+    int id
+    String name
+    String kuerzel
+    boolean ist_kernfach
+    boolean ist_vorrueckungsfach
+  }
+  class klasse {
+    int id
+    String name
+    int jahrgangsstufe
+  }
+  class lehrbefaehigung
+  class lehrkraft {
+    int id
+    String familienname
+    String rufname
+    Date geburtsdatum
+    String geschlecht
+  }
+  class T_note["note"] {
+    int id
+    int wert
+    Date datum
+    int gewicht
+  }
+  class pruefung {
+    int id
+    String typ
+    int laufende_nr
+    Date datum
+  }
+  class schuelerin {
+    int id
+    String familienname
+    String rufname
+    Date geburtsdatum
+    String geschlecht
+    boolean ist_klassensprecher
+  }
+  class unterrichtet
+  klasse "n" --> "1" lehrkraft : klassenleitung_id
+  fach "1" <-- "n" lehrbefaehigung : fach_id
+  lehrbefaehigung "n" --> "1" lehrkraft : lehrkraft_id
+  T_note "n" --> "1" pruefung : pruefung_id
+  T_note "n" --> "1" fach : fach_id
+  T_note "n" --> "1" lehrkraft : lehrkraft_id
+  T_note "n" --> "1" schuelerin : schueler_id
+  pruefung "n" --> "1" lehrkraft : lehrkraft_id
+  pruefung "n" --> "1" fach : fach_id
+  pruefung "n" --> "1" klasse : klasse
+  schuelerin "n" --> "1" klasse : klasse_id
+  unterrichtet "n" --> "1" klasse : klasse_id
+  unterrichtet "n" --> "1" fach : fach_id
+  unterrichtet "n" --> "1" lehrkraft : lehrkraft_id

@@ -11,7 +11,7 @@ import os
 import re
 import sqlite3
 
-MERMAID_INIT = '%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%'
+MERMAID_INIT = '%%{init: {"fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif", "theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%'
 PK_MARK = "̲"  # combining low line: underlined
 FK_MARK = "̣"  # combining dot below: under-dotted
 RAW_BASE = "https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases"
@@ -119,9 +119,14 @@ def mermaid(schema, collapse_mn):
             a, b = junction(info)
             lines.append(f"  {ident(a)} \"n\" -- \"m\" {ident(b)} : {t}")
             continue
-        for cols, ref in info["fks"]:
+        # Table with two FKs to different tables: first edge written reversed, so the layout puts it between them
+        chain = len(info["fks"]) == 2 and len({ref for _, ref in info["fks"]} - {t}) == 2
+        for i, (cols, ref) in enumerate(info["fks"]):
             tail = "1" if sorted(cols) == sorted(info["pk"]) else "n"
-            lines.append(f"  {ident(t)} \"{tail}\" --> \"1\" {ident(ref)} : {', '.join(cols)}")
+            if chain and i == 0:
+                lines.append(f"  {ident(ref)} \"1\" <-- \"{tail}\" {ident(t)} : {', '.join(cols)}")
+            else:
+                lines.append(f"  {ident(t)} \"{tail}\" --> \"1\" {ident(ref)} : {', '.join(cols)}")
     return "\n".join(lines) + "\n"
 
 
@@ -141,16 +146,23 @@ def scheme(schema):
     return "\n".join(lines) + "\n"
 
 
+def badge(label, kind, color, url):
+    return f"[![{label} {kind}](https://img.shields.io/badge/{label.replace(' ', '%20')}-{kind}-{color})]({url})"
+
+
 def readme_block(name, variants, schema_text, out_dir):
     out = []
     for v in variants:
         label = {"": "", "_mn": " (m:n direkt)", "_1n-1n": " (m:n mit Beziehungstabelle)"}[v]
-        line1 = f"**UML{label}:** [PNG]({RAW_BASE}/{name}{v}.png) · [PDF]({RAW_BASE}/{name}{v}.pdf)"
+        buttons = [badge("UML", "PNG", "blue", f"{RAW_BASE}/{name}{v}.png"),
+                   badge("UML", "PDF", "red", f"{RAW_BASE}/{name}{v}.pdf")]
         if os.path.exists(os.path.join(out_dir, f"{name}{v}_portrait.png")):
-            line1 += f" · Hochformat: [PNG]({RAW_BASE}/{name}{v}_portrait.png) · [PDF]({RAW_BASE}/{name}{v}_portrait.pdf)"
-        out += [line1, "",
+            buttons += [badge("UML Hochformat", "PNG", "blue", f"{RAW_BASE}/{name}{v}_portrait.png"),
+                        badge("UML Hochformat", "PDF", "red", f"{RAW_BASE}/{name}{v}_portrait.pdf")]
+        out += [f"**UML{label}:** " + " ".join(buttons), "",
                 f"<img src=\"{RAW_BASE}/{name}{v}.png\" alt=\"UML {name}{v}\" style=\"max-width: 100%;\"/>", ""]
-    out += ["**Tabellenschema:**", "", "```text", schema_text.rstrip("\n"), "```", ""]
+    out += ["**Tabellenschema:** " + badge("Tabellenschema", "PNG", "green", f"{RAW_BASE}/{name}.schema.png"), "",
+            "```text", schema_text.rstrip("\n"), "```", ""]
     return "\n".join(out)
 
 

@@ -1,0 +1,8 @@
+fach(int i̲d̲, String name, String kuerzel, boolean ist_kernfach, boolean ist_vorrueckungsfach)
+klasse(int i̲d̲, String name, int jahrgangsstufe, int ḳḷạṣṣẹṇḷẹịṭụṇg̣_̣ịḍ)
+lehrbefaehigung(int l̲̣e̲̣h̲̣r̲̣k̲̣r̲̣a̲̣f̲̣t̲̣_̲̣i̲̣d̲̣, int f̲̣a̲̣c̲̣h̲̣_̲̣i̲̣d̲̣)
+lehrkraft(int i̲d̲, String familienname, String rufname, Date geburtsdatum, String geschlecht)
+note(int i̲d̲, int wert, Date datum, int gewicht, int ṣc̣ḥụẹḷẹṛ_̣ịḍ, int ḷẹḥṛḳṛạf̣ṭ_̣ịḍ, int f̣ạc̣ḥ_̣ịḍ, int p̣ṛụẹf̣ụṇg̣_̣ịḍ)
+pruefung(int i̲d̲, String typ, int laufende_nr, int ḳḷạṣṣẹ, Date datum, int f̣ạc̣ḥ_̣ịḍ, int ḷẹḥṛḳṛạf̣ṭ_̣ịḍ)
+schuelerin(int i̲d̲, String familienname, String rufname, Date geburtsdatum, String geschlecht, boolean ist_klassensprecher, int ḳḷạṣṣẹ_̣ịḍ)
+unterrichtet(int l̲̣e̲̣h̲̣r̲̣k̲̣r̲̣a̲̣f̲̣t̲̣_̲̣i̲̣d̲̣, int f̲̣a̲̣c̲̣h̲̣_̲̣i̲̣d̲̣, int k̲̣l̲̣a̲̣s̲̣s̲̣e̲̣_̲̣i̲̣d̲̣)

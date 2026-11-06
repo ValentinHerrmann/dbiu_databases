@@ -1,0 +1,86 @@
+%%{init: {"fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif", "theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction LR
+  class abilities {
+    int abil_id
+    String abil_name
+  }
+  class base_stats {
+    int b_hp
+    int b_atk
+    int b_def
+    int b_sp_atk
+    int b_sp_def
+    int b_speed
+  }
+  class moves {
+    int move_id
+    String move_name
+    int move_power
+    int move_pp
+    int move_accuracy
+  }
+  class pokemon {
+    int pok_id
+    String pok_name
+    int pok_height
+    int pok_weight
+    int pok_base_experience
+  }
+  class pokemon_abilities {
+    int slot
+    boolean is_hidden
+  }
+  class pokemon_evolution {
+    int evol_id
+    int evol_minimum_level
+  }
+  class pokemon_evolution_matchup {
+    int gender_rate
+    int capture_rate
+    int base_happiness
+  }
+  class pokemon_habitats {
+    int hab_id
+    String hab_name
+    String hab_descript
+  }
+  class pokemon_move_methods {
+    int method_id
+    String method_name
+  }
+  class pokemon_moves {
+    int level
+  }
+  class pokemon_types {
+    int slot
+  }
+  class type_efficacy {
+    int damage_factor
+  }
+  class types {
+    int type_id
+    String type_name
+    int damage_type_id
+  }
+  class version_groups {
+    int version_id
+    String version_name
+    int order
+  }
+  base_stats "1" --> "1" pokemon : pok_id
+  moves "n" --> "1" types : type_id
+  abilities "1" <-- "n" pokemon_abilities : abil_id
+  pokemon_abilities "n" --> "1" pokemon : pok_id
+  pokemon_evolution "n" --> "1" pokemon_evolution_matchup : evolved_species_id
+  pokemon_evolution_matchup "n" --> "1" pokemon_habitats : hab_id
+  pokemon_evolution_matchup "1" --> "1" pokemon : pok_id
+  pokemon_evolution_matchup "n" --> "1" pokemon : evolves_from_species_id
+  pokemon_moves "n" --> "1" pokemon_move_methods : method_id
+  pokemon_moves "n" --> "1" version_groups : version_group_id
+  pokemon_moves "n" --> "1" moves : move_id
+  pokemon_moves "n" --> "1" pokemon : pok_id
+  types "1" <-- "n" pokemon_types : type_id
+  pokemon_types "n" --> "1" pokemon : pok_id
+  type_efficacy "n" --> "1" types : target_type_id
+  type_efficacy "n" --> "1" types : damage_type_id

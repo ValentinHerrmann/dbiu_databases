@@ -1,0 +1,1 @@
+Olympia(int j̲a̲h̲r̲, String s̲p̲o̲r̲t̲a̲r̲t̲, String d̲i̲s̲z̲i̲p̲l̲i̲n̲, String n̲a̲c̲h̲n̲a̲m̲e̲, String v̲o̲r̲n̲a̲m̲e̲, String geschlecht, String platzierung, String herkunftsland, String austragungsort)

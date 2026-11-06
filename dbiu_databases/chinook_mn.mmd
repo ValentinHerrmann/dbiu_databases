@@ -1,0 +1,86 @@
+%%{init: {"fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif", "theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction LR
+  class Album {
+    int AlbumId
+    String Title
+  }
+  class Artist {
+    int ArtistId
+    String Name
+  }
+  class Customer {
+    int CustomerId
+    String FirstName
+    String LastName
+    String Company
+    String Address
+    String City
+    String State
+    String Country
+    String PostalCode
+    String Phone
+    String Fax
+    String Email
+  }
+  class Employee {
+    int EmployeeId
+    String LastName
+    String FirstName
+    String Title
+    Date BirthDate
+    Date HireDate
+    String Address
+    String City
+    String State
+    String Country
+    String PostalCode
+    String Phone
+    String Fax
+    String Email
+  }
+  class Genre {
+    int GenreId
+    String Name
+  }
+  class Invoice {
+    int InvoiceId
+    Date InvoiceDate
+    String BillingAddress
+    String BillingCity
+    String BillingState
+    String BillingCountry
+    String BillingPostalCode
+    float Total
+  }
+  class InvoiceLine {
+    int InvoiceLineId
+    float UnitPrice
+    int Quantity
+  }
+  class MediaType {
+    int MediaTypeId
+    String Name
+  }
+  class Playlist {
+    int PlaylistId
+    String Name
+  }
+  class Track {
+    int TrackId
+    String Name
+    String Composer
+    int Milliseconds
+    int Bytes
+    float UnitPrice
+  }
+  Album "n" --> "1" Artist : ArtistId
+  Customer "n" --> "1" Employee : SupportRepId
+  Employee "n" --> "1" Employee : ReportsTo
+  Invoice "n" --> "1" Customer : CustomerId
+  Track "1" <-- "n" InvoiceLine : TrackId
+  InvoiceLine "n" --> "1" Invoice : InvoiceId
+  Track "n" -- "m" Playlist : PlaylistTrack
+  Track "n" --> "1" MediaType : MediaTypeId
+  Track "n" --> "1" Genre : GenreId
+  Track "n" --> "1" Album : AlbumId

@@ -1,0 +1,2 @@
+Passwort(String benutzername, String passwort, String ipAdresse, Date zuletztOnline)
+Passwort_gehasht(String benutzername, String passwort, String ipAdresse, Date zuletztOnline)

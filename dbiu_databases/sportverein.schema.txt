@@ -1,0 +1,1 @@
+Sportverein(String v̲o̲r̲n̲a̲m̲e̲, String n̲a̲c̲h̲n̲a̲m̲e̲, Date g̲e̲b̲D̲a̲t̲, String sportart, int vereinsbeitritt)

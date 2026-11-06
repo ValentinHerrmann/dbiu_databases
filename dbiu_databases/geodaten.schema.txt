@@ -1,0 +1,2 @@
+Land(String l̲a̲e̲n̲d̲e̲r̲k̲u̲e̲r̲z̲e̲l̲, String name, float einwohner, int flaeche, String hauptstadt, String kontinent, int kontinentFlaeche, int kontinentEinwohner)
+Ort(String n̲a̲m̲e̲, float l̲a̲e̲n̲g̲e̲, float b̲r̲e̲i̲t̲e̲, String ḷạṇḍ, int einwohner)

@@ -1,4 +1,4 @@
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+%%{init: {"fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif", "theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
 classDiagram
   direction TB
   class aufgaben {
@@ -128,29 +128,29 @@ classDiagram
     float FLAECHE
     String WUESTENART
   }
-  FLUSS "n" --> "1" MEER : MEER
+  MEER "1" <-- "n" FLUSS : MEER
   FLUSS "n" --> "1" SEE : SEE
   GEHT_UEBER_IN "n" --> "1" MEER : MEER2
   GEHT_UEBER_IN "n" --> "1" MEER : MEER1
-  GEO_BERG "n" --> "1" BERG : B_NAME
+  BERG "1" <-- "n" GEO_BERG : B_NAME
   GEO_BERG "n" --> "1" LAND : L_ID
-  GEO_EBENE "n" --> "1" EBENE : E_NAME
+  EBENE "1" <-- "n" GEO_EBENE : E_NAME
   GEO_EBENE "n" --> "1" LAND : L_ID
-  GEO_FLUSS "n" --> "1" FLUSS : F_NAME
+  FLUSS "1" <-- "n" GEO_FLUSS : F_NAME
   GEO_FLUSS "n" --> "1" LAND : L_ID
-  GEO_INSEL "n" --> "1" INSEL : I_NAME
+  INSEL "1" <-- "n" GEO_INSEL : I_NAME
   GEO_INSEL "n" --> "1" LAND : L_ID
-  GEO_MEER "n" --> "1" MEER : M_NAME
+  MEER "1" <-- "n" GEO_MEER : M_NAME
   GEO_MEER "n" --> "1" LAND : L_ID
   GEO_SEE "n" --> "1" LAND : L_ID
-  GEO_WUESTE "n" --> "1" WUESTE : W_NAME
+  WUESTE "1" <-- "n" GEO_WUESTE : W_NAME
   GEO_WUESTE "n" --> "1" LAND : L_ID
   HAT_SITZ_IN "n" --> "1" ORGANISATION : ABKUERZUNG
   HAT_SITZ_IN "n" --> "1" LAND : L_ID
   HAT_SITZ_IN "n" --> "1" STADT : ST_NAME
   IST_BENACHBART_ZU "n" --> "1" LAND : LAND2
   IST_BENACHBART_ZU "n" --> "1" LAND : LAND1
-  IST_MITGLIED_VON "n" --> "1" ORGANISATION : ABKUERZUNG
+  ORGANISATION "1" <-- "n" IST_MITGLIED_VON : ABKUERZUNG
   IST_MITGLIED_VON "n" --> "1" LAND : L_ID
   LANDTEIL "n" --> "1" LAND : L_ID
   LIEGT_AN "n" --> "1" MEER : M_NAME
@@ -159,5 +159,5 @@ classDiagram
   LIEGT_AN "n" --> "1" LAND : L_ID
   LIEGT_AN "n" --> "1" STADT : ST_NAME
   STADT "n" --> "1" LAND : L_ID
-  UMFASST "n" --> "1" KONTINENT : K_NAME
+  KONTINENT "1" <-- "n" UMFASST : K_NAME
   UMFASST "n" --> "1" LAND : L_ID

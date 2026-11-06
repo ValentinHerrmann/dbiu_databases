@@ -1,0 +1,82 @@
+%%{init: {"fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif", "theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction LR
+  class Lieferant {
+    int Nr
+    String Name
+    String Strasse
+    int PLZ
+    String Ort
+    String Sperre
+  }
+  class Kunde {
+    int Nr
+    String Name
+    String Strasse
+    int PLZ
+    String Ort
+    String Sperre
+  }
+  class Personal {
+    int Persnr
+    String Name
+    String Strasse
+    int PLZ
+    String Ort
+    Date GebDatum
+    String Stand
+    float Gehalt
+    String Beurteilung
+    String Aufgabe
+  }
+  class Artikel {
+    int Anr
+    String Bezeichnung
+    float Netto
+    float Steuer
+    float Preis
+    String Farbe
+    String Mass
+    String Einheit
+    String Typ
+  }
+  class Lager {
+    String Lagerort
+    int Bestand
+    int Mindbest
+    int Reserviert
+    int Bestellt
+  }
+  class Lieferung {
+    int Lieferzeit
+    float Nettopreis
+    int Bestellt
+  }
+  class Teilestruktur {
+    int Anzahl
+    String Einheit
+  }
+  class Auftrag {
+    int AuftrNr
+    Date Datum
+  }
+  class Auftragsposten {
+    int PosNr
+    int Anzahl
+    float Gesamtpreis
+  }
+  class Reservierung {
+    int Anzahl
+  }
+  Personal "n" --> "1" Personal : Vorgesetzt
+  Lager "1" --> "1" Artikel : Artnr
+  Lieferant "1" <-- "n" Lieferung : Liefnr
+  Lieferung "n" --> "1" Artikel : Anr
+  Teilestruktur "n" --> "1" Artikel : Einzelteilnr
+  Teilestruktur "n" --> "1" Artikel : Artnr
+  Personal "1" <-- "n" Auftrag : Persnr
+  Auftrag "n" --> "1" Kunde : Kundnr
+  Artikel "1" <-- "n" Auftragsposten : Artnr
+  Auftragsposten "n" --> "1" Auftrag : AuftrNr
+  Artikel "1" <-- "n" Reservierung : Artnr
+  Reservierung "n" --> "1" Auftragsposten : Posnr

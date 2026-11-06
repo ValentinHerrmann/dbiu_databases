@@ -1,0 +1,1 @@
+Bundesland(String k̲u̲e̲r̲z̲e̲l̲, String name, String hauptstadt, String regierungschef, int bundesratsstimmen, int flaeche, float einwohnerzahl, String wappen)

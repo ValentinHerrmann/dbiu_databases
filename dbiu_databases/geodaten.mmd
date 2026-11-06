@@ -1,0 +1,20 @@
+%%{init: {"fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif", "theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction LR
+  class Land {
+    String laenderkuerzel
+    String name
+    float einwohner
+    int flaeche
+    String hauptstadt
+    String kontinent
+    int kontinentFlaeche
+    int kontinentEinwohner
+  }
+  class Ort {
+    String name
+    float laenge
+    float breite
+    int einwohner
+  }
+  Ort "n" --> "1" Land : land

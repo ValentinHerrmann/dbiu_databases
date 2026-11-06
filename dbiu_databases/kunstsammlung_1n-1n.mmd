@@ -1,6 +1,6 @@
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+%%{init: {"fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif", "theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
 classDiagram
-  direction TB
+  direction LR
   class Ausstellung {
     int id
     String stadt
@@ -29,7 +29,7 @@ classDiagram
   }
   class Kunstwerk_zu_Ausstellung
   class Kunstwerk_zu_Kuenstler
-  Kunstwerk_zu_Ausstellung "n" --> "1" Ausstellung : ausstellung_id
+  Ausstellung "1" <-- "n" Kunstwerk_zu_Ausstellung : ausstellung_id
   Kunstwerk_zu_Ausstellung "n" --> "1" Kunstwerk : kunstwerk_id
-  Kunstwerk_zu_Kuenstler "n" --> "1" Kuenstler : kuenstler_id
+  Kuenstler "1" <-- "n" Kunstwerk_zu_Kuenstler : kuenstler_id
   Kunstwerk_zu_Kuenstler "n" --> "1" Kunstwerk : kunstwerk_id
