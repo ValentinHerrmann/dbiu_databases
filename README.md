@@ -34,7 +34,7 @@ SQLite databases for teaching SQL. Databases 1–18 are based on [datenbanken-im
 | 24 | `dbiu.netflix` | 4 | 64786 | 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n |
 | 25 | `dbiu.geodaten` | 2 | 26509 | 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n |
 | 26 | `dbiu.olympia` | 1 | 5770 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
-| planned | `dbiu.passwoerter` | 2 | 10 | none | SELECT, WHERE, ORDER BY, GROUP BY; several independent tables |
+| 27 | `dbiu.passwoerter` | 2 | 10 | none | SELECT, WHERE, ORDER BY, GROUP BY; several independent tables |
 | planned | `dbiu.artikel` | 1 | 148 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
 | planned | `dbiu.bundesland` | 1 | 16 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
 | planned | `dbiu.sportverein` | 1 | 30 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
@@ -43,7 +43,7 @@ SQLite databases for teaching SQL. Databases 1–18 are based on [datenbanken-im
 ### Available SQLite Databases
 
 The following SQLite databases are available in the respective version of [this package](https://pypi.org/project/dbiu_databases).
-and can be used in [sql_testing_tools](https://pypi.org/project/sql-testing-tools/) by calling Ba.setBaseName with `"dbiu.basename"` or number (`1` to `26`).
+and can be used in [sql_testing_tools](https://pypi.org/project/sql-testing-tools/) by calling Ba.setBaseName with `"dbiu.basename"` or number (`1` to `27`).
 
 Each database section below shows the UML class diagram (PNG/PDF download, landscape and portrait) and one-line table schemes following the course conventions (primary keys underlined, foreign keys under-dotted; also as PNG).
 
@@ -80,6 +80,7 @@ If used in other contexts, the database files can be accessed with `importlib.re
 24. `dbiu.netflix`: https://github.com/lerocha/netflixdb (Luis Rocha; Spring Batch tables and empty `episode` table removed)
 25. `dbiu.geodaten`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Geodaten25)
 26. `dbiu.olympia`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+27. `dbiu.passwoerter`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Passwoerter1 + Passwoerter2 as two tables)
 
 #### Database in version: 1 - dbiu.bahn
 
@@ -543,16 +544,7 @@ Olympia(int j̲a̲h̲r̲, String s̲p̲o̲r̲t̲a̲r̲t̲, String d̲i̲s̲z̲i�
 ```
 
 
-### Planned databases (not yet released)
-
-The following databases are prepared but not yet published as package versions; keys and version numbers are provisional.
-
-- `dbiu.passwoerter`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Passwoerter1 + Passwoerter2 as two tables)
-- `dbiu.artikel`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
-- `dbiu.bundesland`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
-- `dbiu.sportverein`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
-
-#### Planned - dbiu.passwoerter
+#### Database in version: 27 - dbiu.passwoerter
 
 **UML:** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/passwoerter.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/passwoerter.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/passwoerter_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/passwoerter_portrait.pdf)
 
@@ -565,6 +557,14 @@ Passwort(String benutzername, String passwort, String ipAdresse, Date zuletztOnl
 Passwort_gehasht(String benutzername, String passwort, String ipAdresse, Date zuletztOnline)
 ```
 
+
+### Planned databases (not yet released)
+
+The following databases are prepared but not yet published as package versions; keys and version numbers are provisional.
+
+- `dbiu.artikel`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+- `dbiu.bundesland`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+- `dbiu.sportverein`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
 
 #### Planned - dbiu.artikel
 
