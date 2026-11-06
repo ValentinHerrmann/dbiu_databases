@@ -12,16 +12,6 @@ classDiagram
     String original_title
     String title
   }
-  class season {
-    int id
-    Date release_date
-    int season_number
-    Date created_date
-    Date modified_date
-    int runtime
-    String original_title
-    String title
-  }
   class tv_show {
     int id
     boolean available_globally
@@ -29,6 +19,16 @@ classDiagram
     Date created_date
     Date modified_date
     String locale
+    String original_title
+    String title
+  }
+  class season {
+    int id
+    Date release_date
+    int season_number
+    Date created_date
+    Date modified_date
+    int runtime
     String original_title
     String title
   }
@@ -45,5 +45,5 @@ classDiagram
     String duration
   }
   season "n" --> "1" tv_show : tv_show_id
-  movie "1" <-- "n" view_summary : movie_id
-  view_summary "n" --> "1" season : season_id
+  season "1" <-- "n" view_summary : season_id
+  view_summary "n" --> "1" movie : movie_id

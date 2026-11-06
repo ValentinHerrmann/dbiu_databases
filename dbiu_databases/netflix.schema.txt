@@ -1,4 +1,4 @@
 movie(int i̲d̲, boolean available_globally, Date release_date, Date created_date, Date modified_date, int runtime, String locale, String original_title, String title)
-season(int i̲d̲, Date release_date, int season_number, Date created_date, Date modified_date, int runtime, int ṭṿ_̣ṣḥọẉ_̣ịḍ, String original_title, String title)
 tv_show(int i̲d̲, boolean available_globally, Date release_date, Date created_date, Date modified_date, String locale, String original_title, String title)
+season(int i̲d̲, Date release_date, int season_number, Date created_date, Date modified_date, int runtime, int ṭṿ_̣ṣḥọẉ_̣ịḍ, String original_title, String title)
 view_summary(int i̲d̲, int cumulative_weeks_in_top10, Date end_date, int hours_viewed, Date start_date, int view_rank, int views, Date created_date, Date modified_date, int ṃọṿịẹ_̣ịḍ, int ṣẹạṣọṇ_̣ịḍ, String duration)

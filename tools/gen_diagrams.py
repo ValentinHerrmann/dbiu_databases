@@ -18,11 +18,6 @@ RAW_BASE = "https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/{r
 
 # Relations not declared as FOREIGN KEY in the database: name -> [(table, column, ref_table)]
 EXTRA_FKS = {
-    "netflix": [
-        ("season", "tv_show_id", "tv_show"),
-        ("view_summary", "movie_id", "movie"),
-        ("view_summary", "season_id", "season"),
-    ],
     "pokemon": [
         ("pokemon_evolution_matchup", "evolves_from_species_id", "pokemon"),
     ],

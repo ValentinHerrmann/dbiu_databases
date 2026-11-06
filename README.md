@@ -1,7 +1,43 @@
-The following Databases are based on [datenbanken-im-unterricht.de](https://www.datenbanken-im-unterricht.de/catalog.php) / [dbiu.de](https://www.dbiu.de/).
+SQLite databases for teaching SQL. Databases 1–18 are based on [datenbanken-im-unterricht.de](https://www.datenbanken-im-unterricht.de/catalog.php) / [dbiu.de](https://www.dbiu.de/); the sources of all others are listed below.
 
 
 
+
+
+### Overview
+
+| Nr | Key | Tables | Rows | Relations | Suitable for |
+|---|---|---|---|---|---|
+| 1 | `dbiu.bahn` | 5 | 33237 | none | SELECT, WHERE, ORDER BY, GROUP BY; several independent tables |
+| 2 | `dbiu.bayern` | 9 | 78139 | 1:n, m:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n); self-join |
+| 3 | `dbiu.bundestag` | 3 | 16762 | 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n |
+| 4 | `dbiu.bundestag_einfach` | 1 | 737 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| 5 | `dbiu.film_fernsehen` | 2 | 198345 | none | SELECT, WHERE, ORDER BY, GROUP BY; several independent tables |
+| 6 | `dbiu.haushaltsausstattung` | 1 | 1330 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| 7 | `dbiu.straftaten` | 5 | 955644 | 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n |
+| 8 | `dbiu.straftaten_einfach` | 1 | 669 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| 9 | `dbiu.kunstsammlung` | 5 | 21929 | m:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over junction tables (m:n) |
+| 10 | `dbiu.ladepunkte` | 3 | 103680 | 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n |
+| 11 | `dbiu.laenderspiele` | 1 | 43375 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| 12 | `dbiu.lebensmittel` | 1 | 1018 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| 13 | `dbiu.schulstatistik` | 1 | 755640 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| 14 | `dbiu.studierende` | 2 | 6960 | 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n |
+| 15 | `dbiu.unfallstatistik` | 1 | 2243 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| 16 | `dbiu.videospiele_einfach` | 1 | 38984 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| 17 | `dbiu.videospiele` | 7 | 175895 | m:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over junction tables (m:n) |
+| 18 | `dbiu.wetterdaten` | 1 | 310192 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| 19 | `dbiu.terra` | 26 | 5025 | 1:n, m:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n); self-join |
+| planned | `dbiu.chinook` | 11 | 15607 | 1:n, m:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n); self-join |
+| planned | `dbiu.bike` | 10 | 142 | 1:1, 1:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n/1:1; self-join |
+| planned | `dbiu.schule` | 8 | 25914 | 1:n, m:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n) |
+| planned | `dbiu.pokemon` | 14 | 251134 | 1:1, 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n/1:1 |
+| planned | `dbiu.netflix` | 4 | 64786 | 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n |
+| planned | `dbiu.geodaten` | 2 | 26509 | 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n |
+| planned | `dbiu.olympia` | 1 | 5770 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| planned | `dbiu.passwoerter` | 2 | 10 | none | SELECT, WHERE, ORDER BY, GROUP BY; several independent tables |
+| planned | `dbiu.artikel` | 1 | 148 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| planned | `dbiu.bundesland` | 1 | 16 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
+| planned | `dbiu.sportverein` | 1 | 30 | none | SELECT, WHERE, ORDER BY, GROUP BY (no JOINs) |
 
 
 ### Available SQLite Databases
@@ -483,8 +519,8 @@ version_groups(int v̲e̲r̲s̲i̲o̲n̲_̲i̲d̲, String version_name, int orde
 
 ```text
 movie(int i̲d̲, boolean available_globally, Date release_date, Date created_date, Date modified_date, int runtime, String locale, String original_title, String title)
-season(int i̲d̲, Date release_date, int season_number, Date created_date, Date modified_date, int runtime, int ṭṿ_̣ṣḥọẉ_̣ịḍ, String original_title, String title)
 tv_show(int i̲d̲, boolean available_globally, Date release_date, Date created_date, Date modified_date, String locale, String original_title, String title)
+season(int i̲d̲, Date release_date, int season_number, Date created_date, Date modified_date, int runtime, int ṭṿ_̣ṣḥọẉ_̣ịḍ, String original_title, String title)
 view_summary(int i̲d̲, int cumulative_weeks_in_top10, Date end_date, int hours_viewed, Date start_date, int view_rank, int views, Date created_date, Date modified_date, int ṃọṿịẹ_̣ịḍ, int ṣẹạṣọṇ_̣ịḍ, String duration)
 ```
 
