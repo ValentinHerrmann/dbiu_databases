@@ -1,0 +1,3 @@
+Ladesaeule(int i̲d̲, int ṣṭạṭịọṇ_̣ịḍ, String art, Date inbetriebnahme, float breitengrad, float laengengrad)
+Ladestation(int i̲d̲, String betreiber, String adresse, String ort, String plz, String landkreis, String bundesland)
+Ladesteckdose(int i̲d̲, int ṣạẹụḷẹ_̣ịḍ, String typ, float leistung)

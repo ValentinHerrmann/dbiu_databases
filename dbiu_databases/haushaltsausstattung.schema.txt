@@ -1,0 +1,1 @@
+Haushaltsausstattung(String a̲u̲s̲s̲t̲a̲t̲t̲u̲n̲g̲, int j̲a̲h̲r̲, float prozent)

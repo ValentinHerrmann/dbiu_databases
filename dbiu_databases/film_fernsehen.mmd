@@ -1,0 +1,23 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction TB
+  class Film {
+    String id
+    String titel
+    int jahr
+    int laufzeit
+    String regisseur
+    String genre1
+    String genre2
+    int fsk
+  }
+  class Serie {
+    String id
+    String titel
+    String originalsprache
+    String sender
+    int startjahr
+    int endjahr
+    int staffeln
+    int episoden
+  }

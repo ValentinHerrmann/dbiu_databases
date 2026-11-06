@@ -1,0 +1,1 @@
+Laenderspiele(int i̲d̲, Date datum, String heim_team, String gast_team, int heim_tore, int gast_tore, String turnier, String stadt, String land)

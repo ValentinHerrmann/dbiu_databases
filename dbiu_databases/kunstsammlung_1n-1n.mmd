@@ -1,0 +1,35 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction TB
+  class Ausstellung {
+    int id
+    String stadt
+    String ausstellungsort
+    String titel
+    Date von
+    Date bis
+  }
+  class Kuenstler {
+    int id
+    String vorname
+    String nachname
+    String geburtsort
+    int geburtsjahr
+    int sterbejahr
+  }
+  class Kunstwerk {
+    int id
+    String inventarnr
+    String titel
+    String jahr
+    String material
+    int hoehe
+    int breite
+    int tiefe
+  }
+  class Kunstwerk_zu_Ausstellung
+  class Kunstwerk_zu_Kuenstler
+  Kunstwerk_zu_Ausstellung "n" --> "1" Ausstellung : ausstellung_id
+  Kunstwerk_zu_Ausstellung "n" --> "1" Kunstwerk : kunstwerk_id
+  Kunstwerk_zu_Kuenstler "n" --> "1" Kuenstler : kuenstler_id
+  Kunstwerk_zu_Kuenstler "n" --> "1" Kunstwerk : kunstwerk_id

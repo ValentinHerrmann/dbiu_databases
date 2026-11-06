@@ -1,0 +1,26 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction LR
+  class Ladesaeule {
+    int id
+    String art
+    Date inbetriebnahme
+    float breitengrad
+    float laengengrad
+  }
+  class Ladestation {
+    int id
+    String betreiber
+    String adresse
+    String ort
+    String plz
+    String landkreis
+    String bundesland
+  }
+  class Ladesteckdose {
+    int id
+    String typ
+    float leistung
+  }
+  Ladesaeule "n" --> "1" Ladestation : station_id
+  Ladesteckdose "n" --> "1" Ladesaeule : saeule_id

@@ -1,0 +1,1 @@
+Bundestag(int i̲d̲, String vorname, String nachname, String geschlecht, Date geburtsdatum, String beruf, String partei, String liste)

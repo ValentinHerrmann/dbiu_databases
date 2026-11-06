@@ -1,0 +1,31 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction TB
+  class Format {
+    String id
+    String beschreibung
+  }
+  class Genre {
+    String id
+    String beschreibung
+  }
+  class Plattform {
+    String id
+    String beschreibung
+  }
+  class Videospiel {
+    String id
+    String titel
+    Date veroeffentlichung
+    String land
+    int usk
+  }
+  class Videospiel_zu_Plattform
+  class Videospiel_zu_Genre
+  class Videospiel_zu_Format
+  Videospiel_zu_Plattform "n" --> "1" Plattform : plattform_id
+  Videospiel_zu_Plattform "n" --> "1" Videospiel : spiel_id
+  Videospiel_zu_Genre "n" --> "1" Genre : genre_id
+  Videospiel_zu_Genre "n" --> "1" Videospiel : spiel_id
+  Videospiel_zu_Format "n" --> "1" Format : format_id
+  Videospiel_zu_Format "n" --> "1" Videospiel : spiel_id

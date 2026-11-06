@@ -1,0 +1,2 @@
+Film(String i̲d̲, String titel, int jahr, int laufzeit, String regisseur, String genre1, String genre2, int fsk)
+Serie(String i̲d̲, String titel, String originalsprache, String sender, int startjahr, int endjahr, int staffeln, int episoden)

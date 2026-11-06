@@ -1,0 +1,2 @@
+Studiengang(String s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, String beschreibung)
+Studierende(String s̲̣t̲̣u̲̣d̲̣i̲̣e̲̣n̲̣g̲̣a̲̣n̲̣g̲̣_̲̣s̲̣c̲̣h̲̣l̲̣u̲̣e̲̣s̲̣s̲̣e̲̣l̲̣, int j̲a̲h̲r̲, int deutsch_m, int deutsch_w, int auslaendisch_m, int auslaendisch_w)

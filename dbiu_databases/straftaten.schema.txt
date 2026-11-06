@@ -1,0 +1,5 @@
+Straftat(String s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, String typ, String oberkategorie, String unterkategorie, String bezeichnung)
+Bevoelkerung(int i̲d̲, String bundesland, String geschlecht, String nationalitaet, int anzahl)
+Faelle(int i̲d̲, String ṣṭṛạf̣ṭạṭ_̣ṣc̣ḥḷụẹṣṣẹḷ, String bundesland, int anzahl, int versuche, int tatort_klein, int tatort_gross, int mit_schusswaffeneinsatz, int aufgeklaert)
+Opfer(int i̲d̲, String ṣṭṛạf̣ṭạṭ_̣ṣc̣ḥḷụẹṣṣẹḷ, String bundesland, int altersgruppe_von, int altersgruppe_bis, String geschlecht, int anzahl)
+Tatverdaechtige(int i̲d̲, String ṣṭṛạf̣ṭạṭ_̣ṣc̣ḥḷụẹṣṣẹḷ, String bundesland, int altersgruppe_von, int altersgruppe_bis, String geschlecht, String nationalitaet, int anzahl)

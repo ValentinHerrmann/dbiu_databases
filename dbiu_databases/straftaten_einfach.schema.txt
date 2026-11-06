@@ -1,0 +1,1 @@
+Straftaten(String s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, String typ, String oberkategorie, String unterkategorie, String bezeichnung, int anzahl, int versuche, int tatort_klein, int tatort_gross, int mit_schusswaffeneinsatz, int aufgeklaert, int tatverdaechtige_m, int tatverdaechtige_w, int davon_nichtdeutsche)

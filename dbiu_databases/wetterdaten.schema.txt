@@ -1,0 +1,1 @@
+Wettermessung(Date d̲a̲t̲u̲m̲, String s̲t̲a̲n̲d̲o̲r̲t̲, float sonnenscheindauer, float niederschlagshoehe, float luftdruck, float windstaerke, float breitengrad, float laengengrad)

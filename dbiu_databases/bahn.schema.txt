@@ -1,0 +1,5 @@
+Bahnhof(int b̲a̲h̲n̲h̲o̲f̲_̲n̲r̲, String bundesland, String name, String abkuerzung, int kategorie, String strasse, String plz, String ort, String aufgabentraeger)
+Betriebsstelle(int i̲d̲, int strecke_nr, int richtung, int km_i, String km_l, String bezeichnung, String art, String kuerzel)
+Bruecke(int i̲d̲, int strecke_nr, int richtung, int von_km_i, int bis_km_i, String von_km_l, String bis_km_l, float laenge)
+Streckenabschnitt(int i̲d̲, int strecke_nr, int richtung, float laenge, int von_km_i, int bis_km_i, String von_km_l, String bis_km_l, String elektrifizierung, String bahnnutzung, String geschwindigkeit, String strecke_ku, String gleisanzahl, String bahnart)
+Tunnel(int i̲d̲, int strecke_nr, int richtung, int von_km_i, int bis_km_i, String von_km_l, String bis_km_l, float laenge, String bezeichnung)

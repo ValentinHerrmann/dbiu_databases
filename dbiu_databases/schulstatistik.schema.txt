@@ -1,0 +1,1 @@
+Schulstatistik(String g̲e̲m̲e̲i̲n̲d̲e̲s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, int s̲c̲h̲u̲l̲j̲a̲h̲r̲_̲s̲t̲a̲r̲t̲, String s̲c̲h̲u̲l̲a̲r̲t̲, String gemeindename, int schulen, int lehrkraefte, int klassen, int schueler, int unterrichtswochenstunden)

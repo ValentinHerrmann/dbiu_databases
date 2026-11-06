@@ -1,0 +1,5 @@
+Ausstellung(int i̲d̲, String stadt, String ausstellungsort, String titel, Date von, Date bis)
+Kuenstler(int i̲d̲, String vorname, String nachname, String geburtsort, int geburtsjahr, int sterbejahr)
+Kunstwerk(int i̲d̲, String inventarnr, String titel, String jahr, String material, int hoehe, int breite, int tiefe)
+Kunstwerk_zu_Ausstellung(int k̲̣u̲̣n̲̣s̲̣t̲̣w̲̣e̲̣r̲̣k̲̣_̲̣i̲̣d̲̣, int a̲̣u̲̣s̲̣s̲̣t̲̣e̲̣l̲̣l̲̣u̲̣n̲̣g̲̣_̲̣i̲̣d̲̣)
+Kunstwerk_zu_Kuenstler(int k̲̣u̲̣n̲̣s̲̣t̲̣w̲̣e̲̣r̲̣k̲̣_̲̣i̲̣d̲̣, int k̲̣u̲̣e̲̣n̲̣s̲̣t̲̣l̲̣e̲̣r̲̣_̲̣i̲̣d̲̣)

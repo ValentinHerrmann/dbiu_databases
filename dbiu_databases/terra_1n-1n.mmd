@@ -1,0 +1,163 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction TB
+  class aufgaben {
+    int id
+    String aufgabe
+    String loesung
+    int schwierigkeit
+    String hinweis
+  }
+  class BERG {
+    String B_NAME
+    String GEBIRGE
+    float HOEHE
+    int JAHR
+    float LAENGE
+    float BREITE
+  }
+  class EBENE {
+    String E_NAME
+    float HOEHE
+    float FLAECHE
+  }
+  class FLUSS {
+    String F_NAME
+    String FLUSS
+    int LAENGE
+    float LAENGEU
+    float BREITEU
+    float LAENGEM
+    float BREITEM
+  }
+  class GEHT_UEBER_IN
+  class GEO_BERG {
+    int id
+    String LT_ID
+  }
+  class GEO_EBENE {
+    String LT_ID
+  }
+  class GEO_FLUSS {
+    int id
+    String LT_ID
+  }
+  class GEO_INSEL {
+    String LT_ID
+  }
+  class GEO_MEER {
+    int id
+    String LT_ID
+  }
+  class GEO_SEE {
+    int id
+    String LT_ID
+    String S_NAME
+  }
+  class GEO_WUESTE {
+    String LT_ID
+  }
+  class HAT_SITZ_IN {
+    String LT_ID
+  }
+  class INSEL {
+    String I_NAME
+    String INSELGRUPPE
+    float FLAECHE
+    float LAENGE
+    float BREITE
+  }
+  class IST_BENACHBART_ZU {
+    int id
+  }
+  class IST_MITGLIED_VON {
+    String ART
+  }
+  class KONTINENT {
+    String K_NAME
+    float FLAECHE
+  }
+  class LAND {
+    String L_ID
+    String L_NAME
+    float EINWOHNER
+    float FLAECHE
+    String HAUPTSTADT
+    String LT_ID
+  }
+  class LANDTEIL {
+    int id
+    String LT_ID
+    String LT_NAME
+    float EINWOHNER
+    String LAGE
+    String HAUPTSTADT
+  }
+  class LIEGT_AN {
+    int id
+    String LT_ID
+  }
+  class MEER {
+    String M_NAME
+    float TIEFE
+  }
+  class ORGANISATION {
+    int id
+    String O_NAME
+    String ABKUERZUNG
+  }
+  class SEE {
+    String S_NAME
+    float TIEFE
+    float FLAECHE
+  }
+  class STADT {
+    String ST_NAME
+    String LT_ID
+    int EINWOHNER
+    float BREITE
+    float LAENGE
+  }
+  class UMFASST {
+    int id
+    float PROZENT
+  }
+  class WUESTE {
+    int id
+    String W_NAME
+    float FLAECHE
+    String WUESTENART
+  }
+  FLUSS "n" --> "1" MEER : MEER
+  FLUSS "n" --> "1" SEE : SEE
+  GEHT_UEBER_IN "n" --> "1" MEER : MEER2
+  GEHT_UEBER_IN "n" --> "1" MEER : MEER1
+  GEO_BERG "n" --> "1" BERG : B_NAME
+  GEO_BERG "n" --> "1" LAND : L_ID
+  GEO_EBENE "n" --> "1" EBENE : E_NAME
+  GEO_EBENE "n" --> "1" LAND : L_ID
+  GEO_FLUSS "n" --> "1" FLUSS : F_NAME
+  GEO_FLUSS "n" --> "1" LAND : L_ID
+  GEO_INSEL "n" --> "1" INSEL : I_NAME
+  GEO_INSEL "n" --> "1" LAND : L_ID
+  GEO_MEER "n" --> "1" MEER : M_NAME
+  GEO_MEER "n" --> "1" LAND : L_ID
+  GEO_SEE "n" --> "1" LAND : L_ID
+  GEO_WUESTE "n" --> "1" WUESTE : W_NAME
+  GEO_WUESTE "n" --> "1" LAND : L_ID
+  HAT_SITZ_IN "n" --> "1" ORGANISATION : ABKUERZUNG
+  HAT_SITZ_IN "n" --> "1" LAND : L_ID
+  HAT_SITZ_IN "n" --> "1" STADT : ST_NAME
+  IST_BENACHBART_ZU "n" --> "1" LAND : LAND2
+  IST_BENACHBART_ZU "n" --> "1" LAND : LAND1
+  IST_MITGLIED_VON "n" --> "1" ORGANISATION : ABKUERZUNG
+  IST_MITGLIED_VON "n" --> "1" LAND : L_ID
+  LANDTEIL "n" --> "1" LAND : L_ID
+  LIEGT_AN "n" --> "1" MEER : M_NAME
+  LIEGT_AN "n" --> "1" SEE : S_NAME
+  LIEGT_AN "n" --> "1" FLUSS : F_NAME
+  LIEGT_AN "n" --> "1" LAND : L_ID
+  LIEGT_AN "n" --> "1" STADT : ST_NAME
+  STADT "n" --> "1" LAND : L_ID
+  UMFASST "n" --> "1" KONTINENT : K_NAME
+  UMFASST "n" --> "1" LAND : L_ID

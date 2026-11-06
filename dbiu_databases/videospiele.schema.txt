@@ -1,0 +1,7 @@
+Format(String i̲d̲, String beschreibung)
+Genre(String i̲d̲, String beschreibung)
+Plattform(String i̲d̲, String beschreibung)
+Videospiel(String i̲d̲, String titel, Date veroeffentlichung, String land, int usk)
+Videospiel_zu_Plattform(String s̲̣p̲̣i̲̣e̲̣l̲̣_̲̣i̲̣d̲̣, String p̲̣l̲̣a̲̣t̲̣t̲̣f̲̣o̲̣r̲̣m̲̣_̲̣i̲̣d̲̣)
+Videospiel_zu_Genre(String s̲̣p̲̣i̲̣e̲̣l̲̣_̲̣i̲̣d̲̣, String g̲̣e̲̣n̲̣r̲̣e̲̣_̲̣i̲̣d̲̣)
+Videospiel_zu_Format(String s̲̣p̲̣i̲̣e̲̣l̲̣_̲̣i̲̣d̲̣, String f̲̣o̲̣r̲̣m̲̣a̲̣t̲̣_̲̣i̲̣d̲̣)

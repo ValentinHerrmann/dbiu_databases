@@ -1,0 +1,25 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction LR
+  class Mandat {
+    String liste
+  }
+  class MdB {
+    int id
+    String partei
+    String nachname
+    String vorname
+    Date geburtsdatum
+    Date sterbedatum
+    String geschlecht
+    String familienstand
+    String religion
+    String beruf
+  }
+  class Wahlperiode {
+    int id
+    Date von
+    Date bis
+  }
+  Mandat "n" --> "1" Wahlperiode : wahlperiode_id
+  Mandat "n" --> "1" MdB : mdb_id

@@ -1,0 +1,59 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction TB
+  class Freizeitpark {
+    int id
+    String name
+    String strasse
+    String url
+    float breitengrad
+    float laengengrad
+  }
+  class Gemeinde {
+    String schluessel
+    String regierungsbezirk
+    String kreis
+    String name
+    String zusatz
+    String plz
+    float flaeche
+    int einwohner_m
+    int einwohner_w
+  }
+  class Nachbargemeinde
+  class Radweg {
+    String radweg_id
+    String name
+  }
+  class Radweg_zu_Gemeinde
+  class Schwimmbad {
+    int id
+    String name
+    String art
+    String strasse
+    String url
+    float breitengrad
+    float laengengrad
+  }
+  class Wanderweg {
+    String wanderweg_id
+    String name
+  }
+  class Wanderweg_zu_Gemeinde
+  class Zoo {
+    int id
+    String name
+    String strasse
+    String url
+    float breitengrad
+    float laengengrad
+  }
+  Freizeitpark "n" --> "1" Gemeinde : gemeindeschluessel
+  Nachbargemeinde "n" --> "1" Gemeinde : gemeindeschluessel_2
+  Nachbargemeinde "n" --> "1" Gemeinde : gemeindeschluessel_1
+  Radweg_zu_Gemeinde "n" --> "1" Gemeinde : gemeindeschluessel
+  Radweg_zu_Gemeinde "n" --> "1" Radweg : radweg_id
+  Schwimmbad "n" --> "1" Gemeinde : gemeindeschluessel
+  Wanderweg_zu_Gemeinde "n" --> "1" Gemeinde : gemeindeschluessel
+  Wanderweg_zu_Gemeinde "n" --> "1" Wanderweg : wanderweg_id
+  Zoo "n" --> "1" Gemeinde : gemeindeschluessel

@@ -1,0 +1,47 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Arial, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%
+classDiagram
+  direction TB
+  class Straftat {
+    String schluessel
+    String typ
+    String oberkategorie
+    String unterkategorie
+    String bezeichnung
+  }
+  class Bevoelkerung {
+    int id
+    String bundesland
+    String geschlecht
+    String nationalitaet
+    int anzahl
+  }
+  class Faelle {
+    int id
+    String bundesland
+    int anzahl
+    int versuche
+    int tatort_klein
+    int tatort_gross
+    int mit_schusswaffeneinsatz
+    int aufgeklaert
+  }
+  class Opfer {
+    int id
+    String bundesland
+    int altersgruppe_von
+    int altersgruppe_bis
+    String geschlecht
+    int anzahl
+  }
+  class Tatverdaechtige {
+    int id
+    String bundesland
+    int altersgruppe_von
+    int altersgruppe_bis
+    String geschlecht
+    String nationalitaet
+    int anzahl
+  }
+  Faelle "n" --> "1" Straftat : straftat_schluessel
+  Opfer "n" --> "1" Straftat : straftat_schluessel
+  Tatverdaechtige "n" --> "1" Straftat : straftat_schluessel

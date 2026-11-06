@@ -1,0 +1,3 @@
+Mandat(int m̲̣d̲̣b̲̣_̲̣i̲̣d̲̣, int w̲̣a̲̣h̲̣l̲̣p̲̣e̲̣r̲̣i̲̣o̲̣d̲̣e̲̣_̲̣i̲̣d̲̣, String liste)
+MdB(int i̲d̲, String partei, String nachname, String vorname, Date geburtsdatum, Date sterbedatum, String geschlecht, String familienstand, String religion, String beruf)
+Wahlperiode(int i̲d̲, Date von, Date bis)

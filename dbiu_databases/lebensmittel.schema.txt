@@ -1,0 +1,1 @@
+Naehrwert(int i̲d̲, String name, String kategorie, int kilokalorien, float proteine, float wasser, float kohlenhydrate, float zucker, float ballaststoffe, float fette)
