@@ -40,9 +40,9 @@ If used in other contexts, the database files can be accessed with `importlib.re
 
 #### Database in version: 1 - dbiu.bahn
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn_portrait.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bahn.png" alt="UML bahn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bahn.png" alt="UML bahn" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -57,13 +57,13 @@ Tunnel(int i̲d̲, int strecke_nr, int richtung, int von_km_i, int bis_km_i, Str
 
 #### Database in version: 2 - dbiu.bayern
 
-**UML (m:n direkt):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_mn.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_mn.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_mn_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_mn_portrait.pdf)
+**UML (m:n direkt):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_mn.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_mn.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_mn_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_mn_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_mn.png" alt="UML bayern_mn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_mn.png" alt="UML bayern_mn" style="max-width: 100%;"/>
 
-**UML (m:n mit Beziehungstabelle):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_1n-1n.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_1n-1n.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_1n-1n_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_1n-1n_portrait.pdf)
+**UML (m:n mit Beziehungstabelle):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_1n-1n.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_1n-1n.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_1n-1n_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_1n-1n_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bayern_1n-1n.png" alt="UML bayern_1n-1n" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bayern_1n-1n.png" alt="UML bayern_1n-1n" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -82,9 +82,9 @@ Zoo(int i̲d̲, String name, String g̣ẹṃẹịṇḍẹṣc̣ḥḷụẹs�
 
 #### Database in version: 3 - dbiu.bundestag
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag.png" alt="UML bundestag" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag.png" alt="UML bundestag" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -97,9 +97,9 @@ Wahlperiode(int i̲d̲, Date von, Date bis)
 
 #### Database in version: 4 - dbiu.bundestag_einfach
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag_einfach.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag_einfach.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag_einfach.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag_einfach.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/bundestag_einfach.png" alt="UML bundestag_einfach" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/bundestag_einfach.png" alt="UML bundestag_einfach" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -110,9 +110,9 @@ Bundestag(int i̲d̲, String vorname, String nachname, String geschlecht, Date g
 
 #### Database in version: 5 - dbiu.film_fernsehen
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen_portrait.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/film_fernsehen.png" alt="UML film_fernsehen" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/film_fernsehen.png" alt="UML film_fernsehen" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -124,9 +124,9 @@ Serie(String i̲d̲, String titel, String originalsprache, String sender, int st
 
 #### Database in version: 6 - dbiu.haushaltsausstattung
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/haushaltsausstattung.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/haushaltsausstattung.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/haushaltsausstattung.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/haushaltsausstattung.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/haushaltsausstattung.png" alt="UML haushaltsausstattung" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/haushaltsausstattung.png" alt="UML haushaltsausstattung" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -137,9 +137,9 @@ Haushaltsausstattung(String a̲u̲s̲s̲t̲a̲t̲t̲u̲n̲g̲, int j̲a̲h̲r̲,
 
 #### Database in version: 7 - dbiu.straftaten
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_portrait.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten.png" alt="UML straftaten" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten.png" alt="UML straftaten" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -154,9 +154,9 @@ Tatverdaechtige(int i̲d̲, String ṣṭṛạf̣ṭạṭ_̣ṣc̣ḥḷụẹ
 
 #### Database in version: 8 - dbiu.straftaten_einfach
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_einfach.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_einfach.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_einfach.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_einfach.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/straftaten_einfach.png" alt="UML straftaten_einfach" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/straftaten_einfach.png" alt="UML straftaten_einfach" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -167,13 +167,13 @@ Straftaten(String s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, String typ, String oberkategor
 
 #### Database in version: 9 - dbiu.kunstsammlung
 
-**UML (m:n direkt):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_mn.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_mn.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_mn_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_mn_portrait.pdf)
+**UML (m:n direkt):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_mn.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_mn.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_mn_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_mn_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_mn.png" alt="UML kunstsammlung_mn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_mn.png" alt="UML kunstsammlung_mn" style="max-width: 100%;"/>
 
-**UML (m:n mit Beziehungstabelle):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_1n-1n.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_1n-1n.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_1n-1n_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_1n-1n_portrait.pdf)
+**UML (m:n mit Beziehungstabelle):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_1n-1n.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_1n-1n.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_1n-1n_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_1n-1n_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/kunstsammlung_1n-1n.png" alt="UML kunstsammlung_1n-1n" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/kunstsammlung_1n-1n.png" alt="UML kunstsammlung_1n-1n" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -188,9 +188,9 @@ Kunstwerk_zu_Kuenstler(int k̲̣u̲̣n̲̣s̲̣t̲̣w̲̣e̲̣r̲̣k̲̣_̲̣i̲
 
 #### Database in version: 10 - dbiu.ladepunkte
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte_portrait.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/ladepunkte.png" alt="UML ladepunkte" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/ladepunkte.png" alt="UML ladepunkte" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -203,9 +203,9 @@ Ladesteckdose(int i̲d̲, int ṣạẹụḷẹ_̣ịḍ, String typ, float lei
 
 #### Database in version: 11 - dbiu.laenderspiele
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/laenderspiele.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/laenderspiele.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/laenderspiele.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/laenderspiele.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/laenderspiele.png" alt="UML laenderspiele" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/laenderspiele.png" alt="UML laenderspiele" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -216,9 +216,9 @@ Laenderspiele(int i̲d̲, Date datum, String heim_team, String gast_team, int he
 
 #### Database in version: 12 - dbiu.lebensmittel
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/lebensmittel.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/lebensmittel.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/lebensmittel.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/lebensmittel.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/lebensmittel.png" alt="UML lebensmittel" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/lebensmittel.png" alt="UML lebensmittel" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -229,9 +229,9 @@ Naehrwert(int i̲d̲, String name, String kategorie, int kilokalorien, float pro
 
 #### Database in version: 13 - dbiu.schulstatistik
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schulstatistik.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schulstatistik.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schulstatistik.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schulstatistik.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schulstatistik.png" alt="UML schulstatistik" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/schulstatistik.png" alt="UML schulstatistik" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -242,9 +242,9 @@ Schulstatistik(String g̲e̲m̲e̲i̲n̲d̲e̲s̲c̲h̲l̲u̲e̲s̲s̲e̲l̲, in
 
 #### Database in version: 14 - dbiu.studierende
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende_portrait.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/studierende.png" alt="UML studierende" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/studierende.png" alt="UML studierende" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -256,9 +256,9 @@ Studierende(String s̲̣t̲̣u̲̣d̲̣i̲̣e̲̣n̲̣g̲̣a̲̣n̲̣g̲̣_̲̣s
 
 #### Database in version: 15 - dbiu.unfallstatistik
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/unfallstatistik.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/unfallstatistik.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/unfallstatistik.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/unfallstatistik.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/unfallstatistik.png" alt="UML unfallstatistik" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/unfallstatistik.png" alt="UML unfallstatistik" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -269,9 +269,9 @@ Unfaelle(String v̲e̲r̲k̲e̲h̲r̲s̲b̲e̲t̲e̲i̲l̲i̲g̲u̲n̲g̲, Strin
 
 #### Database in version: 16 - dbiu.videospiele_einfach
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_einfach.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_einfach.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_einfach.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_einfach.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_einfach.png" alt="UML videospiele_einfach" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_einfach.png" alt="UML videospiele_einfach" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -282,13 +282,13 @@ Videospiel(String i̲d̲, String titel, Date veroeffentlichung, String land, int
 
 #### Database in version: 17 - dbiu.videospiele
 
-**UML (m:n direkt):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_mn.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_mn.pdf)
+**UML (m:n direkt):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_mn.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_mn.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_mn.png" alt="UML videospiele_mn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_mn.png" alt="UML videospiele_mn" style="max-width: 100%;"/>
 
-**UML (m:n mit Beziehungstabelle):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_1n-1n.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_1n-1n.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_1n-1n_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_1n-1n_portrait.pdf)
+**UML (m:n mit Beziehungstabelle):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_1n-1n.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_1n-1n.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_1n-1n_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_1n-1n_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/videospiele_1n-1n.png" alt="UML videospiele_1n-1n" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/videospiele_1n-1n.png" alt="UML videospiele_1n-1n" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -305,9 +305,9 @@ Videospiel_zu_Format(String s̲̣p̲̣i̲̣e̲̣l̲̣_̲̣i̲̣d̲̣, String f̲
 
 #### Database in version: 18 - dbiu.wetterdaten
 
-**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/wetterdaten.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/wetterdaten.pdf)
+**UML:** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/wetterdaten.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/wetterdaten.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/wetterdaten.png" alt="UML wetterdaten" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/wetterdaten.png" alt="UML wetterdaten" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
@@ -318,13 +318,13 @@ Wettermessung(Date d̲a̲t̲u̲m̲, String s̲t̲a̲n̲d̲o̲r̲t̲, float sonne
 
 #### Database in version: 19 - dbiu.terra
 
-**UML (m:n direkt):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_mn.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_mn.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_mn_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_mn_portrait.pdf)
+**UML (m:n direkt):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_mn.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_mn.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_mn_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_mn_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_mn.png" alt="UML terra_mn" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_mn.png" alt="UML terra_mn" style="max-width: 100%;"/>
 
-**UML (m:n mit Beziehungstabelle):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_1n-1n.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_1n-1n.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_1n-1n_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_1n-1n_portrait.pdf)
+**UML (m:n mit Beziehungstabelle):** [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_1n-1n.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_1n-1n.pdf) · Hochformat: [PNG](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_1n-1n_portrait.png) · [PDF](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_1n-1n_portrait.pdf)
 
-<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/terra_1n-1n.png" alt="UML terra_1n-1n" style="max-width: 100%;"/>
+<img src="https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/uml-mermaid-diagrams/dbiu_databases/terra_1n-1n.png" alt="UML terra_1n-1n" style="max-width: 100%;"/>
 
 **Tabellenschema:**
 
