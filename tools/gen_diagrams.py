@@ -3,7 +3,7 @@
 Usage: python3 tools/gen_diagrams.py [--out DIR] [--readme] DB [DB ...]
 
 Writes per database <name>.mmd (or <name>_mn.mmd + <name>_1n-1n.mmd if m:n junction tables exist)
-and <name>.schema.txt next to the database (or into DIR). With --readme, prints the README section.
+and <name>.schema.txt next to the database (or into DIR). With --readme, prints the README section (links to git ref --ref, default main).
 PNG/PDF rendering is done separately by tools/render_diagrams.py.
 """
 import argparse
@@ -14,7 +14,7 @@ import sqlite3
 MERMAID_INIT = '%%{init: {"fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif", "theme": "base", "themeVariables": {"primaryColor": "#ffffff", "mainBkg": "#ffffff", "primaryBorderColor": "#000000", "nodeBorder": "#000000", "lineColor": "#000000", "primaryTextColor": "#000000", "textColor": "#000000", "edgeLabelBackground": "#ffffff", "fontFamily": "Liberation Sans, Arial, Helvetica, sans-serif"}, "class": {"hideEmptyMembersBox": true, "useMaxWidth": false}}}%%'
 PK_MARK = "̲"  # combining low line: underlined
 FK_MARK = "̣"  # combining dot below: under-dotted
-RAW_BASE = "https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases"
+RAW_BASE = "https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/{ref}/dbiu_databases"
 
 # Relations not declared as FOREIGN KEY in the database: name -> [(table, column, ref_table)]
 EXTRA_FKS = {
@@ -150,18 +150,19 @@ def badge(label, kind, color, url):
     return f"[![{label} {kind}](https://img.shields.io/badge/{label.replace(' ', '%20')}-{kind}-{color})]({url})"
 
 
-def readme_block(name, variants, schema_text, out_dir):
+def readme_block(name, variants, schema_text, out_dir, ref):
+    raw = RAW_BASE.format(ref=ref)
     out = []
     for v in variants:
         label = {"": "", "_mn": " (m:n direkt)", "_1n-1n": " (m:n mit Beziehungstabelle)"}[v]
-        buttons = [badge("UML", "PNG", "blue", f"{RAW_BASE}/{name}{v}.png"),
-                   badge("UML", "PDF", "red", f"{RAW_BASE}/{name}{v}.pdf")]
+        buttons = [badge("UML", "PNG", "blue", f"{raw}/{name}{v}.png"),
+                   badge("UML", "PDF", "red", f"{raw}/{name}{v}.pdf")]
         if os.path.exists(os.path.join(out_dir, f"{name}{v}_portrait.png")):
-            buttons += [badge("UML Hochformat", "PNG", "blue", f"{RAW_BASE}/{name}{v}_portrait.png"),
-                        badge("UML Hochformat", "PDF", "red", f"{RAW_BASE}/{name}{v}_portrait.pdf")]
+            buttons += [badge("UML Hochformat", "PNG", "blue", f"{raw}/{name}{v}_portrait.png"),
+                        badge("UML Hochformat", "PDF", "red", f"{raw}/{name}{v}_portrait.pdf")]
         out += [f"**UML{label}:** " + " ".join(buttons), "",
-                f"<img src=\"{RAW_BASE}/{name}{v}.png\" alt=\"UML {name}{v}\" style=\"max-width: 100%;\"/>", ""]
-    out += ["**Tabellenschema:** " + badge("Tabellenschema", "PNG", "green", f"{RAW_BASE}/{name}.schema.png"), "",
+                f"<img src=\"{raw}/{name}{v}.png\" alt=\"UML {name}{v}\" style=\"max-width: 100%;\"/>", ""]
+    out += ["**Tabellenschema:** " + badge("Tabellenschema", "PNG", "green", f"{raw}/{name}.schema.png"), "",
             "```text", schema_text.rstrip("\n"), "```", ""]
     return "\n".join(out)
 
@@ -170,6 +171,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out")
     ap.add_argument("--readme", action="store_true")
+    ap.add_argument("--ref", default="main", help="git ref the README image/download links point to")
     ap.add_argument("dbs", nargs="+")
     args = ap.parse_args()
     for db in args.dbs:
@@ -193,7 +195,7 @@ def main():
         with open(os.path.join(out, f"{name}.schema.txt"), "w", encoding="utf-8") as f:
             f.write(text)
         if args.readme:
-            print(readme_block(name, variants, text, out))
+            print(readme_block(name, variants, text, out, args.ref))
 
 
 if __name__ == "__main__":
