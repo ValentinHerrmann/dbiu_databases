@@ -29,7 +29,7 @@ SQLite databases for teaching SQL. Databases 1–18 are based on [datenbanken-im
 | 19 | `dbiu.terra` | 26 | 5025 | 1:n, m:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n); self-join |
 | 20 | `dbiu.chinook` | 11 | 15607 | 1:n, m:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n); self-join |
 | 21 | `dbiu.bike` | 10 | 142 | 1:1, 1:n, self-reference | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n/1:1; self-join |
-| planned | `dbiu.schule` | 8 | 25914 | 1:n, m:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n) |
+| 22 | `dbiu.schule` | 8 | 25914 | 1:n, m:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n; JOIN over junction tables (m:n) |
 | planned | `dbiu.pokemon` | 14 | 251134 | 1:1, 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n/1:1 |
 | planned | `dbiu.netflix` | 4 | 64786 | 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n |
 | planned | `dbiu.geodaten` | 2 | 26509 | 1:n | SELECT, WHERE, ORDER BY, GROUP BY; JOIN over 1:n |
@@ -43,7 +43,7 @@ SQLite databases for teaching SQL. Databases 1–18 are based on [datenbanken-im
 ### Available SQLite Databases
 
 The following SQLite databases are available in the respective version of [this package](https://pypi.org/project/dbiu_databases).
-and can be used in [sql_testing_tools](https://pypi.org/project/sql-testing-tools/) by calling Ba.setBaseName with `"dbiu.basename"` or number (`1` to `21`).
+and can be used in [sql_testing_tools](https://pypi.org/project/sql-testing-tools/) by calling Ba.setBaseName with `"dbiu.basename"` or number (`1` to `22`).
 
 Each database section below shows the UML class diagram (PNG/PDF download, landscape and portrait) and one-line table schemes following the course conventions (primary keys underlined, foreign keys under-dotted; also as PNG).
 
@@ -75,6 +75,7 @@ If used in other contexts, the database files can be accessed with `importlib.re
 19. `dbiu.terra`: https://terra.sachsen.schule/ (not by dbiu; base on `Dürr, M., Radermacher, K.: "Einsatz von Datenbanksystemen - Ein Leitfaden für die Praxis". Berlin u.a.: Springer-Verlag 1990.`)
 20. `dbiu.chinook`: https://github.com/lerocha/chinook-database (Luis Rocha, v1.4.5)
 21. `dbiu.bike`: https://bike.oth-regensburg.de/downloadbereich-fuer-die-6-auflage.html (Edwin Schicker, "Datenbanken und SQL"; MySQL script `bikemysql-01.sql` from that page, converted to SQLite)
+22. `dbiu.schule`: https://www.learn-sql.de/doku.php?id=sqlide:datenbanken:schudatenbank:start (Martin Pabst; SQLite download on that page, rebuilt without non-standard `isDate()` checks)
 
 #### Database in version: 1 - dbiu.bahn
 
@@ -445,21 +446,7 @@ Reservierung(int P̲̣o̲̣s̲̣n̲̣r̲̣, int A̲̣r̲̣t̲̣n̲̣r̲̣, int A
 ```
 
 
-### Planned databases (not yet released)
-
-The following databases are prepared but not yet published as package versions; keys and version numbers are provisional.
-
-- `dbiu.schule`: https://www.learn-sql.de/doku.php?id=sqlide:datenbanken:schudatenbank:start (Martin Pabst; SQLite download on that page, rebuilt without non-standard `isDate()` checks)
-- `dbiu.pokemon`: https://github.com/brianr852/Pokemon-Database (dump `Dump20160519-1.sql`, found via https://www.learn-sql.de/doku.php?id=sqlide:datenbanken:start; converted to SQLite, views dropped)
-- `dbiu.netflix`: https://github.com/lerocha/netflixdb (Luis Rocha; Spring Batch tables and empty `episode` table removed)
-- `dbiu.geodaten`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Geodaten25)
-- `dbiu.olympia`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
-- `dbiu.passwoerter`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Passwoerter1 + Passwoerter2 as two tables)
-- `dbiu.artikel`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
-- `dbiu.bundesland`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
-- `dbiu.sportverein`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
-
-#### Planned - dbiu.schule
+#### Database in version: 22 - dbiu.schule
 
 **UML (m:n direkt):** [![UML PNG](https://img.shields.io/badge/UML-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_mn.png) [![UML PDF](https://img.shields.io/badge/UML-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_mn.pdf) [![UML Hochformat PNG](https://img.shields.io/badge/UML%20Hochformat-PNG-blue)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_mn_portrait.png) [![UML Hochformat PDF](https://img.shields.io/badge/UML%20Hochformat-PDF-red)](https://raw.githubusercontent.com/ValentinHerrmann/dbiu_databases/main/dbiu_databases/schule_mn_portrait.pdf)
 
@@ -482,6 +469,19 @@ schuelerin(int i̲d̲, String familienname, String rufname, Date geburtsdatum, S
 unterrichtet(int l̲̣e̲̣h̲̣r̲̣k̲̣r̲̣a̲̣f̲̣t̲̣_̲̣i̲̣d̲̣, int f̲̣a̲̣c̲̣h̲̣_̲̣i̲̣d̲̣, int k̲̣l̲̣a̲̣s̲̣s̲̣e̲̣_̲̣i̲̣d̲̣)
 ```
 
+
+### Planned databases (not yet released)
+
+The following databases are prepared but not yet published as package versions; keys and version numbers are provisional.
+
+- `dbiu.pokemon`: https://github.com/brianr852/Pokemon-Database (dump `Dump20160519-1.sql`, found via https://www.learn-sql.de/doku.php?id=sqlide:datenbanken:start; converted to SQLite, views dropped)
+- `dbiu.netflix`: https://github.com/lerocha/netflixdb (Luis Rocha; Spring Batch tables and empty `episode` table removed)
+- `dbiu.geodaten`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Geodaten25)
+- `dbiu.olympia`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+- `dbiu.passwoerter`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page, Passwoerter1 + Passwoerter2 as two tables)
+- `dbiu.artikel`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+- `dbiu.bundesland`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
+- `dbiu.sportverein`: https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/datenmodellierung-und-datenbanken/#vorlagen (`WeitereDatenbanken_SQLLite.zip` on that page)
 
 #### Planned - dbiu.pokemon
 
